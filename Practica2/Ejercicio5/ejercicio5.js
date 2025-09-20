@@ -1,3 +1,8 @@
+/*
+5. Declara dos variables numéricas. Realiza y muestra en la consola la suma, resta,
+multiplicación, y división de ambas.
+*/
+
 let num1 = 2;
 let num2 = 3;
 

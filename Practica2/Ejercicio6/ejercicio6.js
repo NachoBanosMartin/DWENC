@@ -1,3 +1,8 @@
+
+/*
+6. Calcula la media aritmética de tres números y muestra el resultado en la consola.
+*/
+
 let num1 = 2;
 let num2 = 2;
 let num3 = 2;
