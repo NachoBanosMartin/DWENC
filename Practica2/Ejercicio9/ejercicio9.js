@@ -3,7 +3,7 @@
 si es verdadero o falso. Muestra el resultado.
 */
 
-let numero = 0;
+let numero = 1;
 
 numero = Boolean(numero);
 

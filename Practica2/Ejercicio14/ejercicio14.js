@@ -7,6 +7,14 @@
 let x = 20;    
 let y = "20";   
 
+/*
+let igualdadDebil = (x == y);
+let igualdadEstricta = (x === y);
+console.log("Igualdad débil:", igualdadDebil);
+console.log("Igualdad estricta:", igualdadEstricta);
+*/
+
+
 if (x == y) {
   console.log("Tienen el mismo contenido");
 } else {

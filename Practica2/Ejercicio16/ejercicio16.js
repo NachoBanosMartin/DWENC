@@ -5,6 +5,11 @@ número es divisible por 3. Muestra true si es divisible y false si no lo es.
 
 let num = 27;
 
+/*
+let divisible = (num % 3 === 0);
+console.log("¿Es divisible?:", divisible);
+*/
+
 if(num % 3 === 0){
     console.log(true);
 }else{

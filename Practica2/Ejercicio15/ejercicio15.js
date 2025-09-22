@@ -8,6 +8,11 @@ Muestra el resultado.
 let esAdulto = true;
 let tieneTicket = false;
 
+/*
+let sonVerdaderas = esAdulto && tieneTicket;
+console.log("¿Son verdaderas?:", sonVerdaderas);
+*/
+
 if(esAdulto == true && tieneTicket == true ){
     console.log("Ambas variables son verdaderas");
 }else{
