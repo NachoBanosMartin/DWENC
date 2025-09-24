@@ -3,15 +3,12 @@
 bucle for.
 */
 
-let numero = prompt("Introduzca un número:");
-let resultado = 0;
+let numero = parseInt(prompt("Introduzca un número:"));
+let tabla = "";
 
-for(i = 1; i < numero; i ++){
-    resultado = i * numero;
-    i ++;
-    for(j = 1; j < numero; i ++){
-        
-    }
+for (let i = 1; i <= 10; i++) {
+    let resultado = i * numero;
+    tabla += numero + " x " + i + " = " + resultado + "\n";
 }
 
-console.log("El resultado es:",resultado);
+alert(tabla);
