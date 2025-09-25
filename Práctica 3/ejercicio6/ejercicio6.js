@@ -1,3 +1,7 @@
+/*
+6. Solicita al usuario una cadena de texto y cuenta cuántas vocales tiene. Imprime el
+resultado en la consola.
+*/
 let texto = prompt("Introduce una cadena de texto:");
 
 let vocales = "aeiouáéíóúAEIOUÁÉÍÓÚ";

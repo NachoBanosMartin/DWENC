@@ -3,10 +3,14 @@
 usando un condicional if-else.
 */
 
-let numero = prompt("Introduzca un número:");
+let numero = parseInt(prompt("Introduzca un número:"));
 
-if(numero % 2 == 0){
-    console.log("El número introducido es par");
+if(!isNaN(numero)){
+    if(numero % 2 == 0){
+        console.log("El número introducido es par");
+    }else{
+        console.log("El número introducido es impar");
+    }
 }else{
-    console.log("El número introducido es impar");
+    alert("Tienes que introducir un número");
 }
