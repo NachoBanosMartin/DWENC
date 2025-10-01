@@ -2,12 +2,15 @@
 5. Pide al usuario una lista de números y muestra el mayor de ellos.
 */
 
-let numeros = prompt("Indica una lista de números para saber el mayor de ellos:");
-let numerosSeparados = parseInt(numeros.split(","));
-let mayor;
+let numeros = prompt("Introduce una lista de números:");
 
-for(i = 0; i < numeros.length; i ++){
-    if(numerosSeparados[i] >= 9){
-        mayor = numerosSeparados[i];
+let mayor = Number(numeros[0]); 
+
+for (let i = 1; i < numeros.length; i++) {
+    let num = Number(numeros[i]);
+    if (num > mayor) {
+        mayor = num;
     }
 }
+
+console.log("El número mayor es:", mayor);

@@ -4,12 +4,14 @@ letra "a".
 */
 
 let cadena = "Desarrollo de Aplicaciones Web";
-
-cadena.toLowerCase.split(" ");
 let contador = 0;
 
-if(cadena.contains("a")){
-    contador ++;
+let cadenaMinusculas = cadena.toLowerCase();
+
+for (let i = 0; i < cadenaMinusculas.length; i++) {
+    if (cadenaMinusculas[i] === "a") {
+        contador++;
+    }
 }
 
-console.log("La cadena de texto cuenta con ", contador, " a.");
+console.log("La letra 'a' aparece", contador, "veces en la cadena.");

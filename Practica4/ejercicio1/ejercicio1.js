@@ -5,7 +5,6 @@ la cadena.
 
 let cadena = prompt("Introduce una cadena:");
 
-for(i = 0; 1 < cadena.length; i ++){
-    alert("");
-    i ++;
+for (let i = 0; i < cadena.length; i++) {
+    console.log("Posición " + i + ": " + cadena[i]);
 }
