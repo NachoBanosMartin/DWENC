@@ -9,4 +9,4 @@ let arrayCaracteres = cadena.split('');
 
 let resultado = arrayCaracteres.join('-');
 
-alert(resultado);
+alert("Cadena separada: " + resultado);

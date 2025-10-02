@@ -5,18 +5,14 @@ Crea un array con varios productos y precios. Diseña un programa que sume el
 precio total de la compra.
 */
 
-let productos = [
-    { nombre: "manzana", precio: 2 },
-    { nombre: "pera", precio: 3 },
-    { nombre: "platano", precio: 1.5 },
-    { nombre: "naranja", precio: 2.5 }
-];
+let productos = {Manzana: 2, Pera: 3, Platano: 1.5, Sandia: 12.5, Fresas: 4.65};
+let precioFinal = 0;
+let eleccion = prompt("Indique lo que desea comprar: ");
 
 
-let total = 0;
-
-for (let i = 0; i < productos.length; i++) {
-    total += productos[i].precio;
+for(let i = 0; i < productos.lenght; i ++){
+    precioFinal += productos[i][1];
 }
 
-alert("El precio total de la compra es: " + total + "€");
+console.log("El precio de su compra es de ", precioFinal);
+
