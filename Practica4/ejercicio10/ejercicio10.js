@@ -14,18 +14,18 @@ let productos = [
     ["auriculares", 40]
 ];
 
-let productoBuscado = prompt("Introduce el nombre del producto (en minúscula):");
+let producto = prompt("Introduce el nombre del producto (en minúscula):");
 let precio = null;
 
 for (let i = 0; i < productos.length; i++) {
-    if (productos[i][0] === productoBuscado) {
+    if (productos[i][0] === producto) {
         precio = productos[i][1];
         break; 
     }
 }
 
 if (precio !== null) {
-    alert("El precio de " + productoBuscado + " es: " + precio + "€");
+    alert("El precio de " + producto + " es: " + precio + "€");
 } else {
     alert("Producto no encontrado.");
 }

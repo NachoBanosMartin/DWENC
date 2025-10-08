@@ -7,11 +7,10 @@ precio total de la compra.
 
 let productos = {Manzana: 2, Pera: 3, Platano: 1.5, Sandia: 12.5, Fresas: 4.65};
 let precioFinal = 0;
-let eleccion = prompt("Indique lo que desea comprar: ");
 
 
-for(let i = 0; i < productos.lenght; i ++){
-    precioFinal += productos[i][1];
+for(let producto in productos){
+    precioFinal += productos[producto];
 }
 
 console.log("El precio de su compra es de ", precioFinal);

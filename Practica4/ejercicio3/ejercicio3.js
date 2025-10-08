@@ -5,20 +5,28 @@ array no tenga elementos.
 */
 
 let nombres = ["Ana", "Pedro", "Marta", "Pedro", "Lucía", "Javier"];
-let eleccion = prompt("Indica el nombre que quieras eliminar: ");
-let nombresFinal;
+let eleccion;
 
-let posicion = nombres.indexOf(eleccion);
+do{
 
+    eleccion = prompt("Indica el nombre que quieras eliminar: ");
 
+    if(nombres.includes(eleccion)){
+        let posicion = nombres.indexOf(eleccion);
+        nombres.splice(posicion, 1);
+        console.log("El nombre", eleccion, "se ha eliminado");
+    }else{
+        alert("El nombre indicado no se encuentra en el array");
+    } 
 
-if(nombres.includes(eleccion)){
-    nombresFinal = nombres.splice(posicion, 1);
-}else{
-    alert("El nombre indicado no se encuentra en el array");
-}   
+    if(nombres.length == 0){
+        alert("Se ha eliminado todo el contenido del array");
+        break;
+    }
+    
+    console.log(nombres);
 
-console.log(nombresFinal);
+}while(eleccion != "salir");
 
 
 
