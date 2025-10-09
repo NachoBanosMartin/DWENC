@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<!--5. Diseña una página web que será una Calculadora del Perímetro y del Área de un
+Cuadrado. El título de la página será Perímetro y Área de un cuadrado. Pon un
+encabezado (el tamaño será a tu gusto) con la frase: Cálculo del Perímetro y Área
+de un Cuadrado. Para ello se pedirá al usuario la longitud de un lado y se calculará
+el perímetro y el área. Se mostrarán los valores en la página.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perímetro y Área de un cuadrado</title>
+</head>
+<body>
+    <h1>Cálculo del Perímetro y Área de un Cuadrado</h1>
+    <h4 style="color: deeppink;">
+        <script type="text/javascript">
+            let lado = parseFloat(prompt("Introduce la longitud de un lado del cuadrado: "));
+            let perimetro = 4 * lado; 
+            let area = lado * lado;
+
+            document.write("El perímetros de cuadrado introducido es " + perimetro + " y el area es " + area);
+        </script>
+    </h4>
+</body>
+</html>

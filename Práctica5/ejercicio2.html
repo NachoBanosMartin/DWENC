@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<!--2. Diseña una página web que será un Conversor Básico de Temperaturas (°C a
+°F). Se pedirá al usuario una temperatura en grados Celsius y será convertida a
+Fahrenheit, mostrando el resultado directamente en la página. (Fórmula:
+F=(C×9/5)+32). Habrá un encabezado (el tamaño será a tu gusto) con la frase:
+Conversor de Temperatura: Celsius a Fahrenheit. Por último, se informará que
+recargar la página, permitirá volver a realizar otro cálculo-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor Básico de Temperaturas</title>
+</head>
+<body>
+    <h1>Conversor de Temperatura: Celsius a Fahrenheit</h1>
+    <h4 style="color: blueviolet;">
+        <script type="text/javascript">
+            let celsius = parseFloat(prompt("Introduce la temperatura en grados Celsius: "));
+            let fahrenheit = (celsius/5)+32;
+
+            document.write("La temperatura introducida, convertida en Fahrenheit es de " + fahrenheit + "ºF");
+        </script>
+    </h4>
+</body>
+</html>

@@ -3,20 +3,17 @@
 completos. Ten en cuenta si ya ha cumplido años este año o no.
 */
 
-const hoy = new Date();
-let fechaNacimiento = prompt("Introduce la fecha (YYYY-MM-DD):");
+let hoy = new Date();
+let fechaNacimiento = prompt("Introduce la fecha (yyyy-mm-dd):");
 let cumpleanos = new Date(fechaNacimiento);
+let edad = hot.getFullYear() - fechaNacimiento.getFullYear();
 
-if (cumpleanos !== null) { 
-    let edad = hoy.getFullYear() - cumpleanos.getFullYear();
-    let mes = hoy.getMonth() - cumpleanos.getMonth();
-
-    if (mes < 0 || (mes === 0 && hoy.getDate() < cumpleanos.getDate())) {
-        edad--;
-    }
-} else {
-    console.log("El usuario canceló la operación.");
+if(hoy.getMonth() < fechaNacimiento.getMonth() || (hoy.getMonth() === fechaNacimiento.getMonth && hoy.getDate() < fechaNacimiento.getDate())){
+    edad --;
 }
+
+console.log("Tienes",edad,"años");
+
 
 
 

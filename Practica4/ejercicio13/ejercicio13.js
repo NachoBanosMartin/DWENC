@@ -3,7 +3,7 @@
 formato europeo (dd/mm/yyyy).
 */
 
-let fechaUsuario = prompt("Introduce la fecha (YYYY-MM-DD):");
+let fechaUsuario = prompt("Introduce la fecha (yyyy-mm-dd):");
 
 if (fechaUsuario !== null) { 
     let fechaAmericana = new Date(fechaUsuario);

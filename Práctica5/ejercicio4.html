@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<!--4. Diseña una página web que será un conversor de Unidades (Metros a Centímetros
+y a Kilómetros). El título de la página será Conversor de unidades de longitud.
+Pon un encabezado (el tamaño será a tu gusto) con la frase: conversor de
+Unidades (Metros a Centímetros y a Kilómetros). Para ello se pedirá al usuario una
+distancia en metros y se calculará la equivalencia en centímetros y también en
+kilómetros. Se mostrarán los tres valores en la página.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de unidades de longitud</title>
+</head>
+<body>
+    <h1>Conversor de Unidades (Metros a Centímetros y a Kilómetros)</h1>
+    <h4 style="color: darkgreen;">
+        <script type="text/javascript">
+            let metros = parseFloat(prompt("Introduce una distancia en metros: "));
+            let centimetros = metros / 100;
+            let kilimetro = metros * 100;
+
+            document.write("La distancia introducida son " + centimetros + " cm y " + kilimetro + " km.");
+        </script>
+    </h4>
+</body>
+</html>

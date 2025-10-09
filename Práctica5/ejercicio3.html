@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<!--3. Diseña una página web que permitirá calcular el interés simple para préstamos. El
+título de la página será Calculadora de Interés Simple. Habrá un encabezado (el
+tamaño será a tu gusto) con la frase: Calculadora de Interés Simple (Préstamos).
+Para ello se pedirá al usuario un capital inicial (C), una tasa de interés anual (R, ej:
+5 para 5%), y un número de años (T). Calcula el interés simple generado (Fórmula:
+I=C×R×T), y muestra el resultado en la página.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Interés Simple</title>
+</head>
+<body>
+    <h1>Calculadora de Interés Simple (Préstamos)</h1>
+    <h4 style="color: chocolate;">
+        <script type="text/javascript">
+            let capitalInicial = parseFloat(prompt("Introduce el capital inicial: "));
+            let tasaInteres = parseFloat(prompt("Introduce la tasa de interés: "));
+            let numeroAnios = parseInt(prompt("Introduce una cantidad de años: "));
+            let interesSimple = capitalInicial * tasaInteres * numeroAnios;
+
+            document.write("El interés simple de los datos calculados es " + interesSimple);
+        </script>
+    </h4>
+</body>
+</html>
