@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<!--7. Diseña una página web para adivinar un número entre 1 y 10 generado de forma
+aleatoria. El título de la página será Adivina el número. Pon un encabezado (el
+tamaño será a tu gusto) con la frase:Adivina el número (entre 1 y 10). Para ello se
+pedirá al usuario que introduzca un número entre 1 y 10. Se darán pistas de si el
+número es mayor o menor al generado. Al acertar el número, se mostrará en
+página junto al número de intentos.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivina el número</title>
+</head>
+<body>
+    <h1>Adivina el número (entre 1 y 10)</h1>
+    <h4 style="color: darkseagreen;">
+        <script type="text/javascript">
+            
+            let numeroAleatorio = parseInt(rand(1, 10));
+            let contador = 0;
+
+            while(numero != numeroAleatorio){
+                let numero = parseInt(prompt("Introduce un número:"));
+                if(numero != numeroAleatorio){
+                    contador ++;
+                }
+            }
+
+            document.write("Enhorabuena, has acertado el número" + numeroAleatorio + " y lo has hecho con " + contador + " intentos.");
+
+
+        </script>
+    </h4>
+</body>
+</html>

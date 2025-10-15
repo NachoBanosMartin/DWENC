@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<!--6. Diseña una página web que será una Calculadora de IVA. El título de la página
+será Cálculo de IVA. Pon un encabezado (el tamaño será a tu gusto) con la frase:
+Cálculo del Precio Final con IVA (21%). Para ello se pedirá al usuario el precio base
+de un producto (sin IVA). La tasa de IVA fija será del 21%, y habrá que calcular el
+importe de IVA y el precio final del producto. Se mostrarán los valores en la página.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cálculo de IVA</title>
+</head>
+<body>
+    <h1>Cálculo del Precio Final con IVA (21%)</h1>
+    <h4 style="color: hotpink;">
+        <script type="text/javascript">
+            let precio = parseFloat(prompt("Introduce el precio del artículo sin IVA:"));
+            let iva = 21;
+            let ivaProducto = precio + ((precio * iva) / 100);
+
+            document.write("El precio final del producto con IVA es " + ivaProducto + " $");
+        </script>     
+    </h4>
+</body>
+</html>

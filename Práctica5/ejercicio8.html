@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<!--8. Diseña una página web para crear una lista de tareas. El título de la página será
+Lista de tareas. Pon un encabezado (el tamaño será a tu gusto) con la frase: Lista
+de tareas. Para ello se pedirá al usuario que introduzca tres tareas diferentes y se
+guardarán en un array. En la página web se mostrará el número de tareas
+introducidas y el listado completo de las mismas.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de tareas</title>
+</head>
+<body>
+    <h1>Lista de tareas</h1>
+    <h4 style="color: cadetblue;">
+        <script type="text/javascript">
+            let tareas = [];
+
+            for(let i = 1; i <= 3; i ++){
+                let tarea = prompt("Introduce una tarea:");
+                tareas.push(tarea);
+            }
+
+            document.write("Las tareas introducidas son: " + tareas + "<br>"); 
+            document.write("Con un total de " + tareas.length + " tareas.");           
+            
+        </script>
+    </h4>
+</body>
+</html>
