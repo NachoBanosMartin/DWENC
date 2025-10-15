@@ -18,7 +18,7 @@ recargar la página, permitirá volver a realizar otro cálculo-->
     <h4 style="color: blueviolet;">
         <script type="text/javascript">
             let celsius = parseFloat(prompt("Introduce la temperatura en grados Celsius: "));
-            let fahrenheit = (celsius/5)+32;
+            let fahrenheit = parseFloat((celsius/5)+32);
 
             document.write("La temperatura introducida, convertida en Fahrenheit es de " + fahrenheit + "ºF");
         </script>

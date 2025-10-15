@@ -17,8 +17,8 @@ importe de IVA y el precio final del producto. Se mostrarán los valores en la p
     <h4 style="color: hotpink;">
         <script type="text/javascript">
             let precio = parseFloat(prompt("Introduce el precio del artículo sin IVA:"));
-            let iva = 21;
-            let ivaProducto = precio + ((precio * iva) / 100);
+            let iva = 0.21;
+            let ivaProducto = precio + (precio * iva);
 
             document.write("El precio final del producto con IVA es " + ivaProducto + " $");
         </script>     
