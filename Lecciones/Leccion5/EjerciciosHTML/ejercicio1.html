@@ -7,38 +7,74 @@
     <style>
         body{
             font-family: Arial, Helvetica, sans-serif;
-            background-image: url(fondo.ppg);
-            text-align: center;
+            background-image: url(fondo.png);
         }
-        h1{
-            text-align: center;
-            color: darkred;
-        }
-        
 
-        div{
-            text-align: left;
+        table{
+            margin: 0% auto;
         }
+
+        h1{
+            margin-top: 0;
+        }
+
+        .datos{
+            background-color: palevioletred;
+        }
+
+        .estudios{
+            background-color: hotpink;
+        }
+
+        .aficiones{
+            background-color: indianred;
+        }
+
     </style>
 </head>
 
-<body background="./EjerciciosHTML/fondo.png">
-    <div class="container">
-        <div class="foto"></div>
-        <h1>Currículum vitae</h1>
-        
-            <h2>Datos Personales</h2>
+<body>
+    <table width="800px">
+        <tr>
+            <td width = "200px"><img src="./silueta.png"></td>
+            <td style="font-size: 50px; color: darkred;">Currículum vitae</td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-color: rgb(245, 106, 180);"><h1>Datos Personales</h1></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2">
                 <p>Nombre: Sansón Carrasco</p>
                 <p>Domicilio: C/ Aldonza Lorenzo, s/n</p>
                 <p>bla, bla, bla</p>
-            <h2>Estudios</h2>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-color: rgb(248, 143, 195);"><h1>Estudios</h1></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2">
                 <p>Bachillerato en la noble ciudad de Salamanca</p>
                 <p>Curso de caballería andante en Zaragoza</p>
                 <p>bla, bla, bla ...</p>
-            <h2>Aficiones</h2>
+            </td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="background-color: rgb(252, 163, 177);"><h1>Aficiones</h1></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2">
                 <p>Lectura</p>
                 <p>Senderismo</p>
                 <p>bla, bla, bla</p>
-    </div>
+            </td>
+            <td></td>
+        </tr>
+    </table>
 </body>
 </html>
