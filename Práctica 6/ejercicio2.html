@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<!--2. Crea un script que abra una nueva ventana a una URL especificada por el usuario
+con las dimensiones introducidas por teclado.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <script type="text/javascript">
+            let url = prompt("Introduce una url: ", "http://www.google.es");
+            let alto = prompt("Introduce el alto que quieras para la pantalla: ");
+            let ancho = prompt("Introduce el ancho que quieras para la pantalla: ");            
+            let nuevaVentana = window.open(url, "ventana emergente","height=" + alto + ", width=" + ancho);
+        </script>
+</body>
+</html>
