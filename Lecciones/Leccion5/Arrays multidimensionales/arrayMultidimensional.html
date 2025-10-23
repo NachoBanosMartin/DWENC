@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays multidimensionales</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Array tridimensional: 2 "tablas", cada una con 3 filas y 2 columnas
+        let array = [
+            // Primera tabla
+            [
+                [1, 2], 
+                [3, 4], 
+                [5, 6]
+            ],
+            // Segunda tabla
+            [
+                [7, 8], 
+                [9, 10],
+                [11, 12]
+
+            ]
+        ];
+
+        // array[tabla][fila][columna]
+        console.log(array[0][1][1]); // Resultado: 4
+        console.log(array[1][2][0]); // Resultado: 11
+
+        // Recorremos todo el array tridimensional
+        for(let i = 0; i < array.length; i++){
+            console.log("Tabla " + i + ":");
+            for(let j = 0; j < array[i].length; j++){
+                for(let k = 0; k < array[i][j].length; k++){
+                    console.log("array[" + i + "][" + j + "][" + k + "] = " + array[i][j][k]);
+                }
+            }
+        }
+    </script>
+    
+</body>
+</html>

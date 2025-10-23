@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<!--4. Dados los arrays:
+paises = ["España", "Francia", "Italia", "Portugal"];
+capitales = ["Madrid", "París", "Roma", "Lisboa"];
+
+Pide al usuario un país y muestra su capital. Si el país no está en el array, muestra
+un mensaje de error.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <script type="text/javascript">
+        let paises = ["España", "Francia", "Italia", "Portugal"];
+        let capitales = ["Madrid", "París", "Roma", "Lisboa"];
+
+        let paisElegido = prompt("Lista de Paises:\n1. España\n2. Francia\n3. Italia\n4. Portugal" +
+                            "\nIntroduce un país para saber su capital: ");
+
+        for(let i = 0; i < paises.length; i++){
+            if(paises.includes(paisElegido)){
+                console.log(capitales[i]);
+            }    
+        }
+
+    </script>
+</body>
+</html>
