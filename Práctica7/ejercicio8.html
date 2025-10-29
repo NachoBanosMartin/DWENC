@@ -23,7 +23,19 @@ Muestra la ciudad más caliente y la más fría.-->
         let max = temperaturas[0];
         let maxpos = 0;
 
-        
+        for (let i = 1; i < temperaturas.length; i++) {
+            if (temperaturas[i] < min) {
+                min = temperaturas[i];
+                minpos = i;
+            }
+            if (temperaturas[i] > max) {
+                max = temperaturas[i];
+                maxpos = i;
+            }
+        }
+
+        document.write("La ciudad más caliente es " + ciudades[maxpos] + " con " + max + "°C.<br>");
+        document.write("La ciudad más fría es " + ciudades[minpos] + " con " + min + "°C.");   
 
     </script>
 </body>

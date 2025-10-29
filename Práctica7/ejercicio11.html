@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<!--11. Dada la matriz:
+[2, 4, 6]
+[1, 3, 5]
+[7, 8, 9]
+Calcula la suma de cada fila y de cada columna por separado.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [[2, 4, 6],
+                    [1, 3, 5],
+                    [7, 8, 9]];
+
+    // Suma de filas
+    document.write("<h2>Suma de cada fila</h2>");
+    for (let i = 0; i < array.length; i++) {
+        let sumaFila = 0;
+        for (let j = 0; j < array[i].length; j++) {
+        sumaFila += array[i][j];
+        }
+        document.write("Fila " + (i + 1) + ": " + sumaFila + "<br>");
+    }
+
+    // Suma de columnas
+    document.write("<h2>Suma de cada columna</h2>");
+    for (let j = 0; j < array[0].length; j++) {
+            let sumaColumna = 0;
+        for (let i = 0; i < array.length; i++) {
+        sumaColumna += array[i][j];
+        }
+        document.write("Columna " + (j + 1) + ": " + sumaColumna + "<br>");
+    }
+    </script>
+</body>
+</html>
