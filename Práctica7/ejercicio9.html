@@ -17,16 +17,14 @@ Muestra la clasificación por orden de puntuación.-->
         let equipos = ["Sevilla", "Atlético", "Real Madrid", "Barcelona"];
         let puntos = [22, 25, 30, 28];
 
-       // Método burbuja para ordenar por puntos descendente
         for (let i = 0; i < puntos.length - 1; i++) {
             for (let j = 0; j < puntos.length - i - 1; j++) {
-                if (puntos[j] < puntos[j + 1]) {
-                    // Intercambiar puntos
+                if (puntos[j] < puntos[j + 1]) { 
+
                     let tempPuntos = puntos[j];
                     puntos[j] = puntos[j + 1];
                     puntos[j + 1] = tempPuntos;
 
-                    // Intercambiar equipos para mantener sincronía
                     let tempEquipos = equipos[j];
                     equipos[j] = equipos[j + 1];
                     equipos[j + 1] = tempEquipos;
@@ -34,10 +32,8 @@ Muestra la clasificación por orden de puntuación.-->
             }
         }
 
-        // Mostrar clasificación
-        document.write("<h2>Clasificación</h2>");
         for (let i = 0; i < equipos.length; i++) {
-            document.write((i + 1) + ". " + equipos[i] + " - " + puntos[i] + " puntos<br>");
+            console.log(equipos[i] + " - " + puntos[i] + " puntos.");
         }
     </script>
 </body>

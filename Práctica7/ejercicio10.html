@@ -1,4 +1,16 @@
 <!DOCTYPE html>
+
+<!--10.Crea una pequeña aplicación con arrays paralelos que gestione un inventario:
+productos = []
+cantidades = []
+precios = []
+El programa debe permitir
+- Añadir un nuevo producto (nombre, cantidad y precio)
+- Mostrar todo el inventario.
+- Calcular el valor total del inventario (cantidad x precio).
+- Eliminar un producto por nombre.
+- Salir del programa cuando el usuario lo indique.-->
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +18,59 @@
     <title>Document</title>
 </head>
 <body>
+    <script>
+        let productos = [];
+        let cantidades = [];
+        let precios = [];
+
+        let opcion;
     
+        do{
+            opcion = parseInt(prompt("Introduce una opción: " + 
+                                    "\n1. Añadir un nuevo producto (nombre, cantidad y precio)." + 
+                                    "\n2. Mostrar todo el inventario." + 
+                                    "\n3. Calcular el valor total del inventario (cantidad x precio)." + 
+                                    "\n4. Eliminar un producto por nombre."));
+            switch(opcion){
+                case 1:   
+                    let nombre = prompt("Introduce un nombre: ");
+                    let cantidad = prompt("Introduce una cantidad: ");
+                    let precio = parseFloat(prompt("Introduce el precio"));
+
+                    productos.push(nombre);
+                    cantidades.push(cantidad);
+                    precios.push(precio);               
+                break;
+
+                case 2:
+                    for(let i = 0; i < productos.length; i++){
+                        console.log("Nombre: " + productos[i]  +  " Cantidad: " + cantidades[i] + " Precio " + precios[i]);
+                    }
+                break;
+
+                case 3: 
+                    let suma = 0;
+                    for(let i = 0; i < cantidades.length; i++){
+                        suma += cantidades[i] * precios[i];
+                    }
+
+                    console.log("Suma de precio total: " + suma);
+                break;
+
+                case 4: 
+                    let eliminado = prompt("Introduce el nombre del producto a eliminar.");
+                    let indice = productos.indexOf(eliminado);
+
+                    if(indice != -1){
+                        productos.splice(indice, 1);
+                        cantidades.splice(indice, 1);
+                        precios.splice(indice, 1);
+                    }
+
+                    console.log("Producto eliminado correctamente.");                    
+                break;
+            }
+        }while(opcion != 0);
+    </script>
 </body>
 </html>
