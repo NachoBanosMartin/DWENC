@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<!--1. Crea una función calcularSalario(horas, tarifa) que calcule el salario semanal.
+Si se trabaja más de 40 horas, las horas extra se pagan al doble de la tarifa.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let horas = parseInt(prompt("Introduce las horas trabajadas durante la semana: "));
+        let tarifa = parseInt(prompt("Intoduce la tarifa por horas: "));
+
+        calcularSalario(horas, tarifa);
+
+        function  calcularSalario(horas, tarifa){
+            let salarioNormal;
+            let salarioExtras;
+            if(horas > 40){
+                salarioExtras = (tarifa * 2) * horas;
+                alert("Su salario semanal es de: " + salarioExtras + "$");
+            }else{
+                salarioNormal = horas * tarifa;
+                alert("Su salario semanal es de: " + salarioNormal + "$");
+            } 
+        }
+    </script>
+</body>
+</html>

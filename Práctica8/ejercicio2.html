@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!--2. Crea una función validarPassword(pass) que devuelva true si la contraseña
+cumple:
+    • Tiene al menos 8 caracteres
+    • Contiene una mayúscula
+    • Contiene un número-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let contrasenia = prompt("Introduce una contraseña: ");
+
+        validarPassword(contrasenia);
+
+        function validarPassword(contrasenia){
+
+            if(contrasenia.length < 8 || contrasenia.length > 10){
+                alert("Contraseña no válida. La contraseña debe tener min 8 y max 10 caracteres");                
+            }
+
+            if(contrasenia !== contrasenia.toUpperCase()){
+                alert("Contraseña no válida. La contraseña debe contener al menos una mayuscula");
+            }
+
+        }
+    </script>
+</body>
+</html>

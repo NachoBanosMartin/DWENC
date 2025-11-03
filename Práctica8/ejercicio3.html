@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<!--3. Crea una función generarPassword(longitud) que genere una contraseña aleatoria
+con letras y números.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function generarPassword(longitud){
+            let caracteres = "ABCDEFGHIJKLMNÑOPQRSTVWXYZabcdefghijklmnñopqrstvwxyz1234567890";
+            let pass = "";
+
+            for(let i = 0; i < longitud; i++){
+                let aleatorio = Math.floor(Math.random() * caracteres.length);
+
+                pass += caracteres[aleatorio];
+            }
+            
+            return pass;
+        }
+
+        console.log("La contraseña generada es: " + generarPassword(8));
+        
+
+    </script>
+</body>
+</html>
