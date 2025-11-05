@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<!--5. Pide al usuario 3 productos que se guardan en un array. Muestra los productos en
+la página principal con una lista no numerada. Al pulsar un botón "Mostrar lista en
+ventana", abre una ventana nueva mostrando los productos en ella.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            let producto1 = prompt("Introduce el producto 1: ");
+            let producto2 = prompt("Introduce el producto 2: ");
+            let producto3 = prompt("Introduce el producto 3: ");
+
+        function abrirVentana() {            
+
+            let array = [];
+
+            array.push(producto1);
+            array.push(producto2);
+            array.push(producto3);
+
+
+            const win = window.open("", "", "width=400,height=300");
+            win.document.write('<h2>Lista de productos</h2>');
+            win.document.write('<ul>');
+                for(let i = 0; i < array.length; i++){
+                    win.document.write('<li>' + array[i] + '</li>');
+                }
+            win.document.write('</ul>');
+            
+        }
+
+    </script>
+
+    <button onclick="abrirVentana()">Mostrar lista</button>
+</body>
+</html>

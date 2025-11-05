@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+<!--6. Pide dos números al usuario y muéstralos en una página que además tendrá un
+botón que al pulsarlo abrirá una ventana nueva con el resultado de la suma, resta,
+multiplicación y división de ambos números. Controla la división por cero.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numero1 = parseInt(prompt("Introduce el número 1: "));
+        let numero2 = parseInt(prompt("Introduce el número 2: "));
+
+        alert("Los números introducidos son " + numero1 + " y " + numero2);
+
+
+
+        function abrirVentana() {
+
+        const win = window.open("", "", "width=400,height=300");
+        
+        let suma = numero1 + numero2;
+        let resta = numero1 - numero2;
+        let mult = numero1 * numero2;
+        let div = numero1 / numero2;
+
+        win.document.write('<h2>Resultados: </h2>');
+        win.document.write('<ul>');        
+            win.document.write('<li>Suma: ' + suma + '</li>');
+            win.document.write('<li>Resta: ' + resta + '</li>');
+            win.document.write('<li>Multiplicación: ' + mult + '</li>');
+            win.document.write('<li>División: ' + div + '</li>');
+        win.document.write('</ul>');        
+
+        }    
+    </script>
+        <button onclick="abrirVentana()">Mostrar Resultados</button>
+</body>
+</html>
