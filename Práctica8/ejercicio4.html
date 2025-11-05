@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<!--4. Crea una función abrirVentana() que abra una nueva ventana de 400x300 píxeles
+con un mensaje de bienvenida y la hora actual. Incluye un botón en el HTML que
+ejecute la función.-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,6 +9,16 @@
     <title>Document</title>
 </head>
 <body>
-    
+     <script>
+    function abrirVentana() {
+      const hora = new Date().toLocaleTimeString();
+      const mensaje = `<h2>¡Bienvenido!</h2><p>Hora actual: ${hora}</p>`;
+      const win = window.open("", "", "width=400,height=300");
+      win.document.body.innerHTML = mensaje;
+    }
+  </script>
+<body>
+  <button onclick="abrirVentana()">Abrir ventana</button>
 </body>
-</html> 
+</body>
+</html>
