@@ -12,6 +12,35 @@ programa con las siguientes funciones:
     <title>Document</title>
 </head>
 <body>
-    
+    <script>
+
+        let array = [];
+
+        function nuevoNombre(){
+            const win = window.open("", "", "width=400,height=300");
+
+            let nombre = prompt("Introduce un nombre: ");
+            array.push(nombre);
+        } 
+        
+        function mostrarLista(){
+            const win = window.open("", "", "width=400,height=300");
+            win.document.write('<h2>Lista de nombres</h2>');
+            win.document.write('<ul>');
+                for(let i = 0; i < array.length; i++){
+                    win.document.write('<li>' + array[i] + '</li>');
+                }
+            win.document.write('</ul>');
+        }
+
+        function eliminarNombre(){
+            const win = window.open("", "", "width=400,height=300");
+            let eliminarNombre = prompt("Introduce un nombre: ");
+        }
+    </script>
+
+    <button onclick="nuevoNombre()">Nuevo nombre</button>
+    <button onclick="mostrarLista()">Mostrar lista</button>
+    <button onclick="eliminarNombre()">Eliminar nombre</button>
 </body>
 </html>

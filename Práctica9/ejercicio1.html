@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<!--1. Crea un constructor Persona con las propiedades nombre, edad y profesión.
+Crea dos objetos de tipo Persona y muestra sus datos en consola.-->
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Persona(nombre, edad, profesion) {
+                this.nombre = nombre;
+                this.edad = edad;
+                this.profesion = profesion;
+        }        
+
+        let persona1 = new Persona("Perico", 15, "Carpintero");
+
+        console.log(persona1);
+    </script>
+</body>
+</html>
