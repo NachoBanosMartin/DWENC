@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--2. Crea un objeto Coche con las propiedades marca, combustible y cantidad (litros).
+        Debe tener dos métodos:
+        → repostar(litros), que permite añadir combustible al coche y se indica la
+        cantidad repostada.
+        → conducir(distancia) (consume 0.1 litros/km) que reduce la cantidad de
+        combustible.
+        Si no hay suficiente combustible para recorrer la distancia indicada, muestra un
+        mensaje de error.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Coche(marca, combustible, cantidad){
+            this.marca = marca;
+            this.combustible = combustible;
+            this.cantidad = cantidad;
+
+            
+            this.repostar = function(litros) {
+                this.cantidad += litros;
+                console.log("Has repostado " + litros + " litros. Total: " + this.cantidad + " litros.");
+            };
+    
+            this.conducir = function(distancia) {
+                let consumo = distancia * 0.1;
+                if (consumo <= this.cantidad) {
+                    this.cantidad -= consumo;
+                    console.log("Has conducido " + distancia + " km. Combustible restante: " + this.cantidad.toFixed(2) + " litros.");
+                } else {
+                    console.error("No hay suficiente combustible para recorrer " + distancia + " km.");
+                }
+            };
+        }
+
+        let coche = new Coche("Audi", "Diesel", 20);
+
+        console.log("Coche:", coche.marca, coche.combustible, coche.cantidad + " litros");
+
+        coche.repostar(10);
+        coche.conducir(50);
+        coche.conducir(400);
+    </script>
+</body>
+</html>

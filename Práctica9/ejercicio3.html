@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Viaje(destino, precio, plazas){
+            this.destino = destino;
+            this.precio = precio;
+            this.plazas = plazas;
+
+            this.reservar = function() {
+                console.log("Plazas antes de reservar:", this.plazas);
+                if (this.plazas > 0) {
+                    this.plazas--;
+                    console.log("Reserva realizada. Plazas restantes:", this.plazas);
+                } else {
+                    console.error("No quedan plazas disponibles para " + this.destino);
+                }
+            };
+
+            this.cancelar = function() {
+                console.log("Plazas antes de cancelar:", this.plazas);
+                this.plazas++;
+                console.log("Reserva cancelada. Plazas disponibles ahora:", this.plazas);
+            };
+        }
+
+        
+        let viaje1 = new Viaje("París", 500, 3);
+
+        console.log("Viaje creado:", viaje1.destino, "- Precio:", viaje1.precio, "€ - Plazas:", viaje1.plazas);
+
+        viaje1.reservar();   
+        viaje1.reservar();  
+        viaje1.cancelar();   
+        viaje1.reservar();  
+        viaje1.reservar();   
+        viaje1.reservar();   
+    </script>
+</body>
+</html>
