@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--1. Crea un formulario que pida una contraseña. Debe cumplir los siguientes
+requisitos:
+    - Al menos 8 caracteres
+    - Contener una letra mayúscula, una minúscula y un número
+Si cumple las condiciones, muestra un mensaje de “Contraseña segura”, si no, un
+mensaje de error.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        <form onsubmit="return mostrarDatos(this)">
+            <label>Contraseña:</label>
+            <input type="text" name="contrasenia"></input>
+        </form>
+
+        let patron = /[A-Za-z].{8,}/;
+        console.log(patron.test("Hola"));
+        let patron2 =/\d{9}/;
+
+    </script>
+</body>
+</html>
