@@ -8,18 +8,34 @@ Pide al usuario el nombre de un autor y muestra todos los libros que ha escrito
 (puede haber varios).-->
 
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
         let libros = ["Don Quijote", "El Hobbit", "1984", "It", "El Señor de los Anillos"];
         let autores = ["Cervantes", "Tolkien", "Orwell", "Stephen King", "Tolkien"];
 
         let nombre = prompt("Introduce el nombre de un autor");
-        
+
+        let encontrados = [];
+
+        for (let i = 0; i < autores.length; i++) {
+            if (autores[i].toLowerCase() === nombre.toLowerCase()) {
+                encontrados.push(libros[i]);
+            }
+        }
+
+        if (encontrados.length > 0) {
+            alert("Los libros de " + nombre + " son: " + encontrados.join(", "));
+        } else {
+            alert("Ese autor no está en la lista.");
+        }
     </script>
 </body>
+
 </html>

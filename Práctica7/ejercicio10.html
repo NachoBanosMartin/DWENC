@@ -27,14 +27,19 @@ El programa debe permitir
     
         do{
             opcion = parseInt(prompt("Introduce una opción: " + 
+                                    "\n0. Salir del programa." +
                                     "\n1. Añadir un nuevo producto (nombre, cantidad y precio)." + 
                                     "\n2. Mostrar todo el inventario." + 
                                     "\n3. Calcular el valor total del inventario (cantidad x precio)." + 
                                     "\n4. Eliminar un producto por nombre."));
             switch(opcion){
+                case 0:
+                    console.log("Programa terminado.");
+                break;
+
                 case 1:   
                     let nombre = prompt("Introduce un nombre: ");
-                    let cantidad = prompt("Introduce una cantidad: ");
+                    let cantidad = parseInt(prompt("Introduce una cantidad: "));
                     let precio = parseFloat(prompt("Introduce el precio"));
 
                     productos.push(nombre);
@@ -65,6 +70,9 @@ El programa debe permitir
                         productos.splice(indice, 1);
                         cantidades.splice(indice, 1);
                         precios.splice(indice, 1);
+                        console.log("Producto eliminado correctamente.");
+                    } else {
+                        console.log("Ese producto no está en el inventario.");
                     }
 
                     console.log("Producto eliminado correctamente.");                    

@@ -18,15 +18,21 @@ un mensaje de error.-->
         let paises = ["España", "Francia", "Italia", "Portugal"];
         let capitales = ["Madrid", "París", "Roma", "Lisboa"];
 
-        let paisElegido = prompt("Lista de Paises:\n1. España\n2. Francia\n3. Italia\n4. Portugal" +
+        let paisElegido = prompt("Lista de Países:\n1. España\n2. Francia\n3. Italia\n4. Portugal" +
                             "\nIntroduce un país para saber su capital: ");
 
-        for(let i = 0; i < paises.length; i++){
-            if(paises.includes(paisElegido)){
-                console.log(capitales[i]);
-            }    
+        let encontrado = false;
+        for (let i = 0; i < paises.length; i++) {
+            if (paises[i].toLowerCase() === paisElegido.toLowerCase()) {
+                alert("La capital de " + paises[i] + " es " + capitales[i]);
+                encontrado = true;
+                break;
+            }
         }
 
+        if (!encontrado) {
+            alert("Ese país no está en la lista.");
+        }
     </script>
 </body>
 </html>

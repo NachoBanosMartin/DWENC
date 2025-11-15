@@ -18,12 +18,22 @@ Encuentra el número mayor y su posición (fila y columna).-->
                     [9, 2, 6],
                     [4, 7, 1]];
 
+        let mayor = array[0][0];  
+        let fila = 0;
+        let columna = 0;
+
         for (let i = 0; i < array.length; i++) {
-            for (let j = 0; j < array.length; j++) {
-                console.log();
+            for (let j = 0; j < array[i].length; j++) {  
+                if (array[i][j] > mayor) {
+                    mayor = array[i][j];
+                    fila = i;
+                    columna = j;
+                }
             }
         }
 
+        document.write("El número mayor es: " + mayor + "<br>");
+        document.write("Se encuentra en la fila " + (fila + 1) + " y columna " + (columna + 1));
     </script>
 </body>
 </html>

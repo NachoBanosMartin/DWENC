@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!--6. Dados los arrays:
+empleados = ["Ana", "Luis", "Carmen", "Raúl"];
+sueldos = [1200, 1500, 1100, 1300];
+
+Muestra el sueldo promedio, el nombre de los empleados que ganan más de 1200€
+y también aumenta todos los sueldos un 10%.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let empleados = ["Ana", "Luis", "Carmen", "Raúl"];
+        let sueldos = [1200, 1500, 1100, 1300];
+
+        let suma = 0;
+        for (let i = 0; i < sueldos.length; i++) {
+            suma += sueldos[i];
+        }
+        let promedio = suma / sueldos.length;
+        console.log("El sueldo promedio es: " + promedio);
+
+        console.log("Empleados que ganan más de 1200€:");
+        for (let i = 0; i < empleados.length; i++) {
+            if (sueldos[i] > 1200) {
+                console.log(empleados[i] + " (" + sueldos[i] + "€)");
+            }
+        }
+
+        console.log("Sueldos aumentados un 10%:");
+        for (let i = 0; i < sueldos.length; i++) {
+            sueldos[i] = sueldos[i] * 1.10;
+            console.log(empleados[i] + " ahora gana " + sueldos[i].toFixed(2) + "€");
+        }
+    </script>    
+</body>
+</html>

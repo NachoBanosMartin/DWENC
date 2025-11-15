@@ -17,15 +17,14 @@ productos y muestra el producto más caro.-->
     <script type="text/javascript">
         let productos = ["Manzana", "Pan", "Leche", "Queso"];
         let precios = [1.2, 0.8, 1.5, 2.3];
-        let precioTotal = 0;
-        
+        let precioTotal = 0;        
 
         for(let i = 0; i < productos.length; i++){
-            console.log(productos[i] + ": " + precios[i] + "$.");
+            console.log(productos[i] + ": " + precios[i] + "€.");
             precioTotal += precios[i];
         }
         
-        console.log("El precio total es de " + precioTotal + "$.");
+        console.log("El precio total es de " + precioTotal + "€.");
     </script>
 </body>
 </html>

@@ -1,13 +1,4 @@
 <!DOCTYPE html>
-
-<!--3. Dados los arrays:
-alumnos = ["Lucía", "Carlos", "Sofía", "Javier"];
-notas = [7, 5, 9, 4];
-
-Muestra todos los alumnos y sus notas. Pide al usuario el nombre de un alumno y
-muestra su nota. Muestra el promedio de notas, y muestra los nombre de los alumnos
-aprobados.-->
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -19,25 +10,37 @@ aprobados.-->
         let alumnos = ["Lucía", "Carlos", "Sofía", "Javier"];
         let notas = [7, 5, 9, 4];
         let sumaNotas = 0;
-        let media = 0;
 
-        for(let i = 0; i < alumnos.length; i++){
+        for (let i = 0; i < alumnos.length; i++) {
             console.log(alumnos[i] + " tiene un " + notas[i]);
             sumaNotas += notas[i];
-            media = sumaNotas / notas.length;         
         }
 
-        let nombreElegido = prompt("Lista de Alumnos\n1. Lucía\n2. Carlos\n3. Sofía\n4. Javier" +
-                                "\nIndica el nombre de un alumno para saber la nota:");
-
-        for(let i = 0; i < alumnos.length; i++){
-            if(notas[i] >= 5){
-                console.log("Los alumnos aprobados son: " + alumnos[i]);
-            }        
-        }
-
+        let media = sumaNotas / notas.length;
         console.log("La media de las notas es de " + media);
 
+        let nombreElegido = prompt("Lista de Alumnos\n1. Lucía\n2. Carlos\n3. Sofía\n4. Javier" +
+            "\nIndica el nombre de un alumno para saber la nota:");
+
+        let encontrado = false;
+        for (let i = 0; i < alumnos.length; i++) {
+            if (alumnos[i].toLowerCase() === nombreElegido.toLowerCase()) {
+                alert(alumnos[i] + " tiene un " + notas[i]);
+                encontrado = true;
+                break;
+            }
+        }
+        if (!encontrado) {
+            alert("Ese alumno no está en la lista.");
+        }
+
+        let aprobados = [];
+        for (let i = 0; i < alumnos.length; i++) {
+            if (notas[i] >= 5) {
+                aprobados.push(alumnos[i]);
+            }
+        }
+        console.log("Los alumnos aprobados son: " + aprobados.join(", "));
     </script>
 </body>
 </html>

@@ -1,9 +1,4 @@
 <!DOCTYPE html>
-
-<!--6. Crea un script que imprima en consola el nombre del navegador, muestre una
-alerta si el usuario está en online o no y que imprima en consola el idioma del
-sistema operativo.-->
-
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,8 +7,14 @@ sistema operativo.-->
 </head>
 <body>
     <script type="text/javascript">
-        console.log(windows.navigator);
-        console.log(navigator.onLine);
+        console.log(window.navigator.userAgent);
+
+        if (navigator.onLine) {
+            alert("Estás online");
+        } else {
+            alert("Estás offline");
+        }
+
         console.log(navigator.language);
     </script>
 </body>
