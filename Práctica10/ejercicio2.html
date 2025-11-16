@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!--2. Crea un formulario con un área de texto. Cuando el usuario pulse el botón, deberá
+mostrarse:
+- El número de letras.
+- El número de dígitos.
+- El número total de caracteres.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador de caracteres</title>
+</head>
+<body>
+    <h2>Formulario</h2>
+    <form onsubmit="return contarCaracteres()">
+        <textarea id="texto" rows="5" cols="40"></textarea><br>
+        <button type="submit">Analizar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script>
+        function contarCaracteres() {
+            let texto = document.getElementById("texto").value;
+
+            let letras = (texto.match(/[a-zA-Z]/g) || []).length;
+
+            let digitos = (texto.match(/[0-9]/g) || []).length;
+
+            let total = texto.length;
+
+            document.getElementById("resultado").innerHTML =
+                "<p>Número de letras: " + letras + "</p>" +
+                "<p>Número de dígitos: " + digitos + "</p>" +
+                "<p>Total de caracteres: " + total + "</p>";
+
+            return false; 
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadística de edades</title>
+</head>
+<body>
+    <script>
+        let nombres = [];
+        let edades = [];
+
+        let cantidad = parseInt(prompt("Cuántas personas quieres introducir?"));
+
+        for (let i = 0; i < cantidad; i++) {
+            let nombre = prompt("Introduce el nombre de la persona " + (i+1) + ":");
+            let edad = parseInt(prompt("Introduce la edad de " + nombre + ":"));
+            nombres.push(nombre);
+            edades.push(edad);
+        }
+
+        document.write("<h2>Lista de personas y edades</h2>");
+        document.write("<ul>");
+        for (let i = 0; i < cantidad; i++) {
+            document.write("<li>" + nombres[i] + " - " + edades[i] + " años</li>");
+        }
+        document.write("</ul>");
+
+        function estadisticas() {
+            const ventana = window.open("", "", "width=500,height=400");
+
+            let edadMayor = edades[0];
+            let edadMenor = edades[0];
+            let nombreMayor = nombres[0];
+            let nombreMenor = nombres[0];
+
+            for (let i = 1; i < edades.length; i++) {
+                if (edades[i] > edadMayor) {
+                    edadMayor = edades[i];
+                    nombreMayor = nombres[i];
+                }
+                if (edades[i] < edadMenor) {
+                    edadMenor = edades[i];
+                    nombreMenor = nombres[i];
+                }
+            }
+
+            let suma = 0;
+            for (let i = 0; i < edades.length; i++) {
+                suma += edades[i];
+            }
+            let media = (suma / edades.length).toFixed(2);
+
+            // Mostrar resultados
+            ventana.document.write("<h2>Estadísticas de edades</h2>");
+            ventana.document.write("<p>Edad mayor: " + edadMayor + " años (" + nombreMayor + ")</p>");
+            ventana.document.write("<p>Edad menor: " + edadMenor + " años (" + nombreMenor + ")</p>");
+            ventana.document.write("<p>Edad media: " + media + " años</p>");
+            ventana.document.close();
+        }
+    </script>
+
+    <button onclick="estadisticas()">Estadística edades</button>
+</body>
+</html>

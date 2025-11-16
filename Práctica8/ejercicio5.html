@@ -1,42 +1,44 @@
 <!DOCTYPE html>
-
-<!--5. Pide al usuario 3 productos que se guardan en un array. Muestra los productos en
-la página principal con una lista no numerada. Al pulsar un botón "Mostrar lista en
-ventana", abre una ventana nueva mostrando los productos en ella.-->
+<!--5. Pide al usuario 3 productos que se guardan en un array. 
+Muestra los productos en la página principal con una lista no numerada. 
+Al pulsar un botón "Mostrar lista en ventana", abre una ventana nueva mostrando los productos en ella.-->
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Lista de productos</title>
 </head>
 <body>
     <script>
-            let producto1 = prompt("Introduce el producto 1: ");
-            let producto2 = prompt("Introduce el producto 2: ");
-            let producto3 = prompt("Introduce el producto 3: ");
+        
+        let producto1 = prompt("Introduce el producto 1: ");
+        let producto2 = prompt("Introduce el producto 2: ");
+        let producto3 = prompt("Introduce el producto 3: ");
 
-        function abrirVentana() {            
+        let array = [producto1, producto2, producto3];
 
-            let array = [];
-
-            array.push(producto1);
-            array.push(producto2);
-            array.push(producto3);
-
-
-            const win = window.open("", "", "width=400,height=300");
-            win.document.write('<h2>Lista de productos</h2>');
-            win.document.write('<ul>');
-                for(let i = 0; i < array.length; i++){
-                    win.document.write('<li>' + array[i] + '</li>');
-                }
-            win.document.write('</ul>');
-            
+        document.write("<h2>Lista de productos</h2>");
+        document.write("<ul>");
+        for (let i = 0; i < array.length; i++) {
+            document.write("<li>" + array[i] + "</li>");
         }
+        document.write("</ul>");
 
+        
+        function abrirVentana() {
+
+            let ventana = window.open("", "", "width=400,height=300");
+            ventana.document.write("<h2>Lista de productos en ventana</h2>");
+            ventana.document.write("<ul>");
+            for (let i = 0; i < array.length; i++) {
+                ventana.document.write("<li>" + array[i] + "</li>");
+            }
+            ventana.document.write("</ul>");
+            ventana.document.close();
+        }
     </script>
 
-    <button onclick="abrirVentana()">Mostrar lista</button>
+    <button onclick="abrirVentana()">Mostrar lista en ventana</button>
 </body>
 </html>

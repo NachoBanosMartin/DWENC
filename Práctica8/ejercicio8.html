@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--8. Crea tres arrays: productos, precios y cantidades. Se pedirán 3 productos con sus
+precios y cantidades.
+    Muestra el inventario en la página principal. Al pulsar el botón "Calcular total" de la
+    página principal, abre una ventana nueva que muestre:
+        • El total de cada producto.
+        • El total global de la compra.
+        • Si la cantidad es mayor que 10, añade un mensaje indicando “Descuento aplicable” en 
+ese producto.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventario</title>
+</head>
+<body>
+    <script>
+        
+        let productos = [];
+        let precios = [];
+        let cantidades = [];
+
+        
+        for (let i = 0; i < 3; i++) {
+            let producto = prompt("Introduce el nombre del producto " + (i+1) + ":");
+            let precio = parseFloat(prompt("Introduce el precio de " + producto + ":"));
+            let cantidad = parseInt(prompt("Introduce la cantidad de " + producto + ":"));
+
+            productos.push(producto);
+            precios.push(precio);
+            cantidades.push(cantidad);
+        }
+
+        
+        document.write("<h2>Inventario</h2>");
+        document.write("<ul>");
+        for (let i = 0; i < productos.length; i++) {
+            document.write("<li>" + productos[i] + ", Precio: " + precios[i] + ", € Cantidad: " 
+                + cantidades[i] + "</li>");
+        }
+        document.write("</ul>");
+
+        function calcularTotal() {
+            const ventana = window.open("", "", "width=500,height=400");
+            ventana.document.write("<h2>Totales de la compra</h2>");
+            ventana.document.write("<ul>");
+
+            let totalGlobal = 0;
+
+            for (let i = 0; i < productos.length; i++) {
+                let totalProducto = precios[i] * cantidades[i];
+                totalGlobal += totalProducto;
+
+                ventana.document.write("<li>" + productos[i] + ": " + totalProducto.toFixed(2) + " €");
+
+                if (cantidades[i] > 10) {
+                    ventana.document.write(" - Descuento aplicable");
+                }
+
+                ventana.document.write("</li>");
+            }
+
+            ventana.document.write("</ul>");
+            ventana.document.write("<h3>Total global: " + totalGlobal.toFixed(2) + " €</h3>");
+            ventana.document.close();
+        }
+    </script>
+
+    <button onclick="calcularTotal()">Calcular total</button>
+</body>
+</html>

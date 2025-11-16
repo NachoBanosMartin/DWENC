@@ -9,19 +9,32 @@ mensaje de error.-->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Validar contraseña</title>
 </head>
 <body>
+    <form onsubmit="return validarPassword()">
+        <label>Contraseña:</label>
+        <input type="password" id="contrasenia">
+        <button type="submit">Enviar</button>
+    </form>
+
     <script>
-        <form onsubmit="return mostrarDatos(this)">
-            <label>Contraseña:</label>
-            <input type="text" name="contrasenia"></input>
-        </form>
+        function validarPassword() {
+            let contrasenia = document.getElementById("contrasenia").value;
 
-        let patron = /[A-Za-z].{8,}/;
-        console.log(patron.test("Hola"));
-        let patron2 =/\d{9}/;
+            let tieneMayuscula = /[A-Z]/.test(contrasenia);
+            let tieneMinuscula = /[a-z]/.test(contrasenia);
+            let tieneNumero = /[0-9]/.test(contrasenia);
+            let longitudCorrecta = contrasenia.length >= 8;
 
+            if (tieneMayuscula && tieneMinuscula && tieneNumero && longitudCorrecta) {
+                alert("Contraseña segura");
+                return true; 
+            } else {
+                alert("Error: la contraseña no cumple los requisitos");
+                return false; 
+            }
+        }
     </script>
 </body>
 </html>

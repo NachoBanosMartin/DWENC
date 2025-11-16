@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--3. Crea una página con un formulario de contacto que pida: nombre, edad, teléfono,
+correo electrónico, asunto, y un mensaje con algo de información.
+Cuando el usuario pulse “Enviar mensaje”, valida que:
+    - El nombre contiene solo letras y espacios.
+    - La edad es un número entre 1 y 99
+    - El correo y el teléfono tienen un formato válido.
+    - El mensaje no está vacío.
+Si los datos son correctos, abre una nueva ventana que muestre un resumen del
+mensaje enviado.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de contacto</title>
+</head>
+<body>
+    <h2>Formulario de contacto</h2>
+    <form onsubmit="return validarFormulario()">
+        <label>Nombre:</label><br>
+        <input type="text" id="nombre"><br><br>
+
+        <label>Edad:</label><br>
+        <input type="text" id="edad"><br><br>
+
+        <label>Teléfono:</label><br>
+        <input type="text" id="telefono"><br><br>
+
+        <label>Correo electrónico:</label><br>
+        <input type="text" id="correo"><br><br>
+
+        <label>Asunto:</label><br>
+        <input type="text" id="asunto"><br><br>
+
+        <label>Mensaje:</label><br>
+        <textarea id="mensaje" rows="5" cols="40"></textarea><br><br>
+
+        <button type="submit">Enviar mensaje</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            let nombre = document.getElementById("nombre").value.trim();
+            let edad = parseInt(document.getElementById("edad").value.trim());
+            let telefono = document.getElementById("telefono").value.trim();
+            let correo = document.getElementById("correo").value.trim();
+            let asunto = document.getElementById("asunto").value.trim();
+            let mensaje = document.getElementById("mensaje").value.trim();
+
+            // Validaciones básicas
+            let nombreValido = /^[A-Za-z\s]+$/.test(nombre);
+            let edadValida = !isNaN(edad) && edad >= 1 && edad <= 99;
+            let telefonoValido = /^[0-9]{9}$/.test(telefono); // ejemplo: 9 dígitos
+            let correoValido = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(correo);
+            let mensajeValido = mensaje.length > 0;
+
+            if (!nombreValido) {
+                alert("El nombre solo puede contener letras y espacios.");
+                return false;
+            }
+            if (!edadValida) {
+                alert("La edad debe ser un número entre 1 y 99.");
+                return false;
+            }
+            if (!telefonoValido) {
+                alert("El teléfono debe tener 9 dígitos.");
+                return false;
+            }
+            if (!correoValido) {
+                alert("El correo electrónico no es válido.");
+                return false;
+            }
+            if (!mensajeValido) {
+                alert("El mensaje no puede estar vacío.");
+                return false;
+            }
+
+            // Si todo es correcto, abrir ventana con resumen
+            const win = window.open("", "", "width=500,height=400");
+            win.document.write("<h2>Resumen del mensaje enviado</h2>");
+            win.document.write("<p><strong>Nombre:</strong> " + nombre + "</p>");
+            win.document.write("<p><strong>Edad:</strong> " + edad + "</p>");
+            win.document.write("<p><strong>Teléfono:</strong> " + telefono + "</p>");
+            win.document.write("<p><strong>Correo:</strong> " + correo + "</p>");
+            win.document.write("<p><strong>Asunto:</strong> " + asunto + "</p>");
+            win.document.write("<p><strong>Mensaje:</strong> " + mensaje + "</p>");
+            win.document.close();
+
+            return false; // evita enviar realmente el formulario
+        }
+    </script>
+</body>
+</html>

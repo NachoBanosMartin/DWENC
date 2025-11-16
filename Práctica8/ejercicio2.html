@@ -16,17 +16,30 @@ cumple:
 
         validarPassword(contrasenia);
 
-        function validarPassword(contrasenia){
+        function validarPassword(contrasenia) {
+            let mayusculas = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            let numeros = "0123456789";
 
-            if(contrasenia.length < 8 || contrasenia.length > 10){
-                alert("Contraseña no válida. La contraseña debe tener min 8 y max 10 caracteres");                
+            if (contrasenia.length < 8 || contrasenia.length > 10){
+                return false;
+            } 
+
+            let tieneMayuscula = false;
+            let tieneNumero = false;
+
+            for (let i = 0; i < contrasenia.length; i++) {
+                let pass = contrasenia[i];
+                if (mayusculas.includes(pass)) {
+                    tieneMayuscula = true;
+                }
+                if (numeros.includes(pass)) {
+                    tieneNumero = true;
+                }
             }
 
-            if(contrasenia !== contrasenia.toUpperCase()){
-                alert("Contraseña no válida. La contraseña debe contener al menos una mayuscula");
-            }
-
+            return tieneMayuscula && tieneNumero;
         }
+
     </script>
 </body>
 </html>

@@ -3,13 +3,12 @@
 programa con las siguientes funciones:
     • nuevoNombre() → pide un nombre y lo añade al array.
     • mostrarLista() → abre una ventana con todos los nombres.
-    • eliminarNombre() → pide un nombre y lo elimina.
--->
+    • eliminarNombre() → pide un nombre y lo elimina-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gestión de nombres</title>
 </head>
 <body>
     <script>
@@ -17,25 +16,34 @@ programa con las siguientes funciones:
         let array = [];
 
         function nuevoNombre(){
-            const win = window.open("", "", "width=400,height=300");
-
             let nombre = prompt("Introduce un nombre: ");
-            array.push(nombre);
+            if (nombre) {
+                array.push(nombre);
+                alert("Nombre añadido: " + nombre);
+            }
         } 
         
         function mostrarLista(){
-            const win = window.open("", "", "width=400,height=300");
-            win.document.write('<h2>Lista de nombres</h2>');
-            win.document.write('<ul>');
-                for(let i = 0; i < array.length; i++){
-                    win.document.write('<li>' + array[i] + '</li>');
-                }
-            win.document.write('</ul>');
+            const ventana = window.open("", "", "width=400,height=300");
+            ventana.document.write('<h2>Lista de nombres</h2>');
+            ventana.document.write('<ul>');
+            for(let i = 0; i < array.length; i++){
+                ventana.document.write('<li>' + array[i] + '</li>');
+            }
+            ventana.document.write('</ul>');
+            ventana.document.close();
         }
 
         function eliminarNombre(){
-            const win = window.open("", "", "width=400,height=300");
-            let eliminarNombre = prompt("Introduce un nombre: ");
+            let nombre = prompt("Introduce el nombre a eliminar: ");
+            let indice = array.indexOf(nombre);
+
+            if (indice !== -1) {
+                array.splice(indice, 1);
+                alert("Nombre eliminado: " + nombre);
+            } else {
+                alert("El nombre no está en la lista.");
+            }
         }
     </script>
 
