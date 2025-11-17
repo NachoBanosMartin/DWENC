@@ -41,3 +41,63 @@ multiplicación y división de ambos números. Controla la división por cero.--
         <button onclick="abrirVentana()">Mostrar Resultados</button>
 </body>
 </html>
+
+
+
+
+
+<!--
+
+    <script>
+        function validarFormulario() {
+            let nombre = document.getElementById("nombre").value.trim();
+            let edad = parseInt(document.getElementById("edad").value.trim());
+            let telefono = document.getElementById("telefono").value.trim();
+            let correo = document.getElementById("correo").value.trim();
+            let asunto = document.getElementById("asunto").value.trim();
+            let mensaje = document.getElementById("mensaje").value.trim();
+
+            // Validaciones básicas
+            let nombreValido = /^[A-Za-z\s]+$/.test(nombre);
+            let edadValida = !isNaN(edad) && edad >= 1 && edad <= 99;
+            let telefonoValido = /^[0-9]{9}$/.test(telefono); // ejemplo: 9 dígitos
+            let correoValido = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(correo);
+            let mensajeValido = mensaje.length > 0;
+
+            if (!nombreValido) {
+                alert("El nombre solo puede contener letras y espacios.");
+                return false;
+            }
+            if (!edadValida) {
+                alert("La edad debe ser un número entre 1 y 99.");
+                return false;
+            }
+            if (!telefonoValido) {
+                alert("El teléfono debe tener 9 dígitos.");
+                return false;
+            }
+            if (!correoValido) {
+                alert("El correo electrónico no es válido.");
+                return false;
+            }
+            if (!mensajeValido) {
+                alert("El mensaje no puede estar vacío.");
+                return false;
+            }
+
+            // Si todo es correcto, abrir ventana con resumen
+            const win = window.open("", "", "width=500,height=400");
+            win.document.write("<h2>Resumen del mensaje enviado</h2>");
+            win.document.write("<p><strong>Nombre:</strong> " + nombre + "</p>");
+            win.document.write("<p><strong>Edad:</strong> " + edad + "</p>");
+            win.document.write("<p><strong>Teléfono:</strong> " + telefono + "</p>");
+            win.document.write("<p><strong>Correo:</strong> " + correo + "</p>");
+            win.document.write("<p><strong>Asunto:</strong> " + asunto + "</p>");
+            win.document.write("<p><strong>Mensaje:</strong> " + mensaje + "</p>");
+            win.document.close();
+
+            return false; // evita enviar realmente el formulario
+        }
+    </script>
+-->
+

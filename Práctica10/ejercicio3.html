@@ -15,79 +15,93 @@ mensaje enviado.-->
     <title>Formulario de contacto</title>
 </head>
 <body>
-    <h2>Formulario de contacto</h2>
     <form onsubmit="return validarFormulario()">
         <label>Nombre:</label><br>
-        <input type="text" id="nombre"><br><br>
-
+            <input type="text" id="nombre"><br><br>
         <label>Edad:</label><br>
-        <input type="text" id="edad"><br><br>
-
+            <input type="text" id="edad"><br><br>
         <label>Teléfono:</label><br>
-        <input type="text" id="telefono"><br><br>
-
+            <input type="text" id="telefono"><br><br>
         <label>Correo electrónico:</label><br>
-        <input type="text" id="correo"><br><br>
-
+            <input type="text" id="correo"><br><br>
         <label>Asunto:</label><br>
-        <input type="text" id="asunto"><br><br>
-
+            <input type="text" id="asunto"><br><br>
         <label>Mensaje:</label><br>
-        <textarea id="mensaje" rows="5" cols="40"></textarea><br><br>
-
+            <textarea textarea id="mensaje" rows="5" cols="40"></textarea><br><br>
         <button type="submit">Enviar mensaje</button>
     </form>
-
     <script>
-        function validarFormulario() {
-            let nombre = document.getElementById("nombre").value.trim();
-            let edad = parseInt(document.getElementById("edad").value.trim());
-            let telefono = document.getElementById("telefono").value.trim();
-            let correo = document.getElementById("correo").value.trim();
-            let asunto = document.getElementById("asunto").value.trim();
-            let mensaje = document.getElementById("mensaje").value.trim();
+        function validarFormulario(){
+            let nombre = getElementById("nombre").value;
+            let edad = getElementById("edad").value;
+            let telefono = getElementById("telefono").value;
+            let correo = getElementById("correo").value;
+            let asunto = getElementById("asunto").value;
+            let mensaje = getElementById("mensaje").value;
 
-            // Validaciones básicas
             let nombreValido = /^[A-Za-z\s]+$/.test(nombre);
-            let edadValida = !isNaN(edad) && edad >= 1 && edad <= 99;
-            let telefonoValido = /^[0-9]{9}$/.test(telefono); // ejemplo: 9 dígitos
-            let correoValido = /^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(correo);
-            let mensajeValido = mensaje.length > 0;
+            let edadValida = /^[1-99]+$/.test(edad);
+            let telefonoValido = /^\d{9}+$/.test(telefono);
+            let correoValido = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(correo);
+            let mensajeValido = mensaje.length < 0;
 
-            if (!nombreValido) {
-                alert("El nombre solo puede contener letras y espacios.");
-                return false;
-            }
-            if (!edadValida) {
-                alert("La edad debe ser un número entre 1 y 99.");
-                return false;
-            }
-            if (!telefonoValido) {
-                alert("El teléfono debe tener 9 dígitos.");
-                return false;
-            }
-            if (!correoValido) {
-                alert("El correo electrónico no es válido.");
-                return false;
-            }
-            if (!mensajeValido) {
-                alert("El mensaje no puede estar vacío.");
+            if(!nombreValido){
+                alert("El nombre no es válido");
                 return false;
             }
 
-            // Si todo es correcto, abrir ventana con resumen
-            const win = window.open("", "", "width=500,height=400");
-            win.document.write("<h2>Resumen del mensaje enviado</h2>");
-            win.document.write("<p><strong>Nombre:</strong> " + nombre + "</p>");
-            win.document.write("<p><strong>Edad:</strong> " + edad + "</p>");
-            win.document.write("<p><strong>Teléfono:</strong> " + telefono + "</p>");
-            win.document.write("<p><strong>Correo:</strong> " + correo + "</p>");
-            win.document.write("<p><strong>Asunto:</strong> " + asunto + "</p>");
-            win.document.write("<p><strong>Mensaje:</strong> " + mensaje + "</p>");
-            win.document.close();
+            if(!edadValida){
+                alert("La edad no es válida");
+                return false;
+            }
 
-            return false; // evita enviar realmente el formulario
-        }
+            if(!telefonoValido){
+                alert("El teléfono no es válido");
+                return false;
+            }
+
+            if(!correoValido){
+                alert("El correo no es válido");
+                return false;
+            }
+
+            if(!mensajeValido){
+                alert("El mensaje no es válido");
+                return false;
+            }
+
+            let ventana = window.open("", "", "width=500,height=400");
+            ventana.document.write("<h2>Resumen del mensaje enviado</h2>");
+            ventana.document.write("<p>Nombre: " + nombre + "</p>");
+            ventana.document.write("<p>Edad: " + edad + "</p>");
+            ventana.document.write("<p>Teléfono: " + telefono + "</p>");
+            ventana.document.write("<p>Correo: " + correo + "</p>");
+            ventana.document.write("<p>Asunto: " + asunto + "</p>");
+            ventana.document.write("<p>Mensaje: " + mensaje + "</p>");
+            }
     </script>
+
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
