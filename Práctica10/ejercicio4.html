@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--4. Diseña un formulario que permita registrar un coche con los siguientes campos:
+matrícula (cuatro dígitos, guion y tres letras), marca, modelo y año de
+matriculación.
+Valida los datos con expresiones regulares y abre una nueva ventana con la
+información del coche.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return validarDatos()" name="f">
+        <label>Matrícula:</label><br>
+            <input type="text" name="matricula"><br><br>
+        <label>Marca:</label><br>
+            <input type="text" name="marca"><br><br>
+        <label>Modelo:</label><br>
+            <input type="text" name="modelo"><br><br>
+        <label>Año de Matriculación:</label><br>
+            <input type="text" name="anio"><br><br>
+        <button type="submit">Registrar coche</button>
+    </form>
+    <script>
+        function validarDatos(){
+            let matricula = document.forms["f"].matricula.value;
+            let marca = document.forms["f"].marca.value;
+            let modelo = document.forms["f"].modelo.value;
+            let anio = document.forms["f"].anio.value;
+
+            let matriculaValida = /^\d{4}-[A-Z]{3}$/.test(matricula);
+            let marcaValida = /^[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ\s]+$/.test(marca);
+            let modeloValido = /^[a-zA-ZáéíóúüÁÉÍÓÚÜñÑ\s]+$/.test(modelo);
+            let anioValido = /^\d{4}$/.test(anio)
+
+            if(!matriculaValida){
+                alert("Matrícula inválida.");
+                return false;
+            }
+
+            if(!marcaValida){
+                alert("Marca inválida.");
+                return false;
+            }
+
+            if(!modeloValido){
+                alert("Modelo inválida.");
+                return false;
+            }
+
+            if(!anioValido){
+                alert("Anio inválido.");
+                return false;
+            }
+
+            let ventana = window.open("", "", "width=500,height=400");
+            ventana.document.write("<h2>Coches Registrados</h2>");
+            ventana.document.write("<p>Matrícula: " + matricula + "</p>");
+            ventana.document.write("<p>Marca: " + marca + "</p>");
+            ventana.document.write("<p>Modelo: " + modelo + "</p>");
+            ventana.document.write("<p>Año de Matriculación: " + anio + "</p>");
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--5. Crea un formulario que permita introducir: nombre del cliente, precio base del
+producto, descuento (%) e IVA (%).
+Al pulsar el botón “Calcular total”, abre una ventana que muestre el total calculado.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return validarDatos()" name="f">
+        <label>Nombre del Cliente:</label><br>
+            <input type="text" name="cliente"><br><br>
+        <label>Precio del Producto:</label><br>
+            <input type="text" name="precio"><br><br>
+        <label>Descuento (%):</label><br>
+            <input type="text" name="descuento"><br><br>
+        <label>IVA:</label><br>
+            <input type="text" name="iva"><br><br>
+        <button type="submit">Calcular Total</button>
+    </form>
+</body>
+</html>
