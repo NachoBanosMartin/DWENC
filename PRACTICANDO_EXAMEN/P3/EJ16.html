@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numero1 = parseFloat(prompt("Introduce un número"));
+        let numero2 = parseFloat(prompt("Introduce otro número"));
+        let operacion = prompt("Introduce una operación (+, -, *, /).");
+
+        switch (operacion) {
+            case "+":
+                console.log("Resultado de la suma:", numero1 + numero2);
+                break;
+            case "-":
+                console.log("Resultado de la resta:", numero1 - numero2);
+                break;
+            case "*":
+                console.log("Resultado de la multiplicación", numero1 * numero2);
+                break;
+            case "/":
+                console.log("Resultado de la división", numero1 / numero2);
+                break;
+            default:
+                console.log("Operación no válida");
+                break;
+        }
+    </script>
+</body>
+</html>

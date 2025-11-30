@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!--15.Muestra todos los números entre 1 y 50 que sean divisibles por 3 o por 5, indicando
+cuál es el divisor, si el 3 o el 5 en cada caso.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        for(let i = 1; i < 50; i++){
+            if(i % 3 === 0 && i % 5 === 0){
+                console.log(i + " es divisible entre 3 y 5");
+            }else if(i % 3 === 0){
+                console.log(i + " es divisible entre 3");
+            }else if(i % 5 === 0){
+                console.log(i + " es divisible entre 5");
+            }
+        }
+    </script>
+</body>
+</html>

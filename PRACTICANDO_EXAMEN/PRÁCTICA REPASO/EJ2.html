@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Selecciona un color</h2>
+    <button onclick="mostrarColor('red')">Rojo</button>
+    <button onclick="mostrarColor('green')">Verde</button>
+    <button onclick="mostrarColor('blue')">Azul</button>
+
+    <script>
+        function mostrarColor(color) {
+            let ventana = window.open("", "", "width=300,height=200");
+            ventana.document.body.style.backgroundColor = color;
+            ventana.document.body.innerHTML = "<h2>Color seleccionado: " + color + "</h2>";
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detector de navegador</title>
+</head>
+<body>
+
+<button onclick="detectarNavegador()">Detectar navegador</button>
+
+<script>
+function detectarNavegador() {
+
+    let version = navigator.appVersion;
+    let navegador = "";
+
+    if (version.includes("Firefox")) {
+        navegador = "Mozilla Firefox";
+    } 
+    else if (version.includes("Chrome") && !version.includes("Edg")) {
+        navegador = "Google Chrome";
+    } 
+    else if (version.includes("Edg")) {
+        navegador = "Microsoft Edge";
+    }
+    else if (version.includes("Safari")) {
+        navegador = "Safari";
+    } 
+    else {
+        navegador = "un navegador desconocido";
+    }
+
+    let nuevaVentana = window.open("", "", "width=500,height=300");
+
+    nuevaVentana.document.write(`<h1>Estás usando ${navegador}</h1>`);
+}
+</script>
+
+</body>
+</html>

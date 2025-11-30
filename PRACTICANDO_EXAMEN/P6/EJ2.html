@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let url = prompt("Introduce una url: ", "http://www.google.es");
+        let alto = parseInt(prompt("Introduce el alto que quieras para la pantalla: "));
+        let ancho = parseInt(prompt("Introduce el ancho que quieras para la pantalla: "));            
+        let nuevaVentana = window.open(url, "", "height=" + alto + ", width=" + ancho);
+    </script>
+</body>
+</html>

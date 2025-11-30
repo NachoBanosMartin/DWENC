@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="formulario" method="post">
+        <h2>Formulario de inscripción al curso de informática</h2>
+
+        <label>Nombre completo:</label><br>
+            <input type="text" id="nombre"><br><br>
+        <label>Correo electrónico:</label><br>
+            <input type="email" id="correo"><br><br>
+        <label>Edad:</label><br>
+            <input type="number" id="edad"><br><br>
+        <label>Sexo:</label><br>
+            <input type="radio" name="sexo" value="Hombre"> Hombre
+            <input type="radio" name="sexo" value="Mujer"> Mujer<br><br>
+        <label>Curso elegido:</label><br>
+            <select id="curso">
+                <option value="">Selecciona un curso:</option>
+                <option value="Sistemas Operativos">Sistemas Operativos</option>
+                <option value="Programación Web">Programación Web</option>
+                <option value="Bases de Datos">Bases de Datos</option>
+            </select><br><br>
+        <label>Intereses:</label><br>
+            <input type="checkbox" value="Hardware"> Hardware
+            <input type="checkbox" value="Software"> Software
+            <input type="checkbox" value="Redes"> Redes<br><br>
+        <label>Comentarios adicionales:</label><br>
+            <textarea id="comentarios"></textarea><br><br>
+        <button type="button" onclick="enviarFormulario()">Enviar</button>
+        <button type="button" onclick="limpiarFormulario()">Limpiar</button>
+    </form>
+
+    <script>
+        function enviarFormulario() {
+            let nombre = document.getElementById("nombre").value;
+            let correo = document.getElementById("correo").value;
+            let edad = document.getElementById("edad").value;
+            let sexo = document.querySelector('input[name="sexo"]:checked');
+            let curso = document.getElementById("nombre").value;
+            let intereses = "";
+            let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+                for (let i = 0; i < checkboxes.length; i++) {
+                    if (checkboxes[i].checked) {
+                    intereses += checkboxes[i].value + " ";
+                    }
+                }
+            let comentarios = document.getElementById("nombre").value;
+                if (nombre === "" || correo === "" || edad === "" || !sexo || curso === "") {
+                    alert("Por favor, completa todos los campos obligatorios.");
+                    return;
+                }
+
+            let texto = "Nombre: " + nombre + "\n" +
+                        "Correo: " + correo + "\n" +
+                        "Edad: " + edad + "\n" +
+                        "Sexo: " + sexo.value + "\n" +
+                        "Curso: " + curso + "\n" +
+                        "Intereses: " + intereses + "\n" +
+                        "Comentarios: " + comentarios;
+
+            let nuevaVentana = window.open("", "_blank");
+                nuevaVentana.document.write("<pre>" + texto + "</pre>");
+        }
+        
+        function limpiarFormulario() {
+            document.getElementById("formulario").reset();
+        }
+    </script>
+</body>
+</html>

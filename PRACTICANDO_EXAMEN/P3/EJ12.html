@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let inicio = parseInt(prompt("Introduzca un número de inicio:"));
+        let fin = parseInt(prompt("Introduzca un número de fin:"));
+
+        let pares = 0;
+        let impares = 0;
+
+        for(let i = inicio; i < fin; i++){
+            if(i % 2 == 0){
+                pares++;
+            }else{
+                impares ++;
+            }
+        }
+
+        console.log(pares + " son números pares");
+        console.log(impares + " son números impares");
+    </script>
+</body>
+</html>

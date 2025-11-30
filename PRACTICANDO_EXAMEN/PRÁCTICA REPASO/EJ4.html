@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!--Crea un constructor Coche(marca, combustible) y un array de tres coches. Crea
+una función para listar todos los coches en una nueva ventana.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Coches</h2>
+    <button onclick="listarCoches()">Mostrar coches</button>
+
+    <script>
+        function Coche(marca, combustible){
+            this.marca = marca;
+            this.combustible = combustible;
+        }
+
+        let coches = [
+            new Coche("Toyota", "Gasolina"),
+            new Coche("Renault", "Diésel"),
+            new Coche("Audi", "Gasolina"),
+        ];
+
+        function listarCoches(){
+            let ventana = window.open("", "", "width=400, height=300");
+            ventana.document.write("<h2>Listado de coches:</h2>");
+            for(let i = 0; i < coches.length; i++){
+                ventana.document.write("Marca: " + coches[i].marca + " Combustible: " + coches[i].combustible + "<br>");
+            }
+        }
+    </script>
+</body>
+</html>

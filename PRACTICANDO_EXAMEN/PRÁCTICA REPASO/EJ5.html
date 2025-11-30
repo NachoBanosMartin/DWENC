@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--Crea dos arrays paralelos: nombres y notas. Pide un nombre al usuario y muestra
+su nota.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>    
+    <script>
+        let nombres = ["Leonardo", "Donatelo", "Rafael", "Michelangelo"];
+        let notas = [6.5, 9, 5, 4.6];
+
+        let consulta = prompt("Introduce un nombre para saber la nota");
+        let encontrado = false;
+
+        for(let i = 0; i < nombres.length; i ++){
+            if(consulta === nombres[i]){
+                alert("La nota de " + consulta + " es: " + notas[i]);
+                encontrado = true;
+                break;
+            }
+        }
+
+        if(!encontrado){
+            alert("Alumno no encontrado");
+        }
+    </script>
+</body>
+</html>

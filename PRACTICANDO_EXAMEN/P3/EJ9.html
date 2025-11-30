@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<!--Pide un número al usuario y determina si es primo o no.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numero = parseInt(prompt("Introduzca un número:"));
+        let esPrimo = true;
+
+        if(numero <= 1){
+            esPrimo = false; // 0 y 1 no son primos
+        }else{
+            for(let i = 2; i <= Math.sqrt(numero); i++){
+                if(numero % i === 0){
+                    esPrimo = false;
+                    break;
+                }
+            }
+        }
+
+        if (esPrimo) {
+            alert("El número " + numero + " es primo.");
+            console.log("El número " + numero + " es primo.");
+        } else {
+            alert("El número " + numero + " no es primo.");
+            console.log("El número " + numero + " no es primo.");
+        }
+    </script>
+</body>
+</html>
