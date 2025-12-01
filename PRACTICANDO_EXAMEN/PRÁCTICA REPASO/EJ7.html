@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--Implementa una página para un registro de usuarios que permita introducir un
+nombre y un email, que habrá que validar. Guarda esos datos en arrays paralelos y
+muestra la lista de usuarios en una ventana nueva.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Registro de usuarios</h2>
+    <form name="formReg" action="" method="post">
+        <label>Nombre:</label><br>
+            <input type="text" name="nombre"><br><br>
+        <label>Email:</label><br>
+            <input type="text" name="email"><br><br>
+        <button onclick="registrar()">Registrar usuario</button>
+    </form>
+    <script>
+        let nombres = [];
+        let emails = [];
+
+        function registrar(){
+            let nombre = document.forms["formReg"].nombre.value;
+            let email = document.forms["formReg"].email.value;
+
+            let patronNombre = /^[A-Za-z\s]+$/;
+            let patronEmail = /[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}/;
+
+            if(!patronNombre.test(nombre)){
+                alert("El nombre no es válido. Usa solo letras y espacios.");
+                return;
+            }
+
+            if(!patronEmail.test(email)){
+                alert("El email no es válido.");
+                return;
+            }
+
+            nombres.push(nombre);
+            emails.push(email);
+
+            let ventana = window.open("", "usuario", "width=500,height=400");
+            ventana.document.write("<h2>Usuarios Registrados</h2>");
+            ventana.document.write("<h4>Nombre - Email</h4><br>");
+            for(let i = 0; i < nombres.length; i++){
+                ventana.document.write(nombres[i] + " - " + emails[i] + "<br>");
+            }
+            ventana.document.close();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--Pide al usuario cuántos números aleatorios quiere generar. Muestra el array de
+números generados en una ventana nueva.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numeros = parseInt(prompt("Indica cuántos números aleatoios quieres:"));
+        if(isNaN(numeros) || numeros <= 0){
+            console.log("Error, introduce un número válido mayor que 0.");
+        }else{
+            let aleatorios = [];
+            for(let i = 0; i < numeros; i++){
+                let num = Math.floor(Math.random() * 100) + 1;
+                aleatorios.push(num);
+            }
+
+            window.open().document.write(aleatorios.join(", "));
+        }
+
+    </script>
+</body>
+</html>
