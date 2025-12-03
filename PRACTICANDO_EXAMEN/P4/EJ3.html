@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--Dado el array ["Ana", "Pedro", "Marta", "Pedro", "Lucía", "Javier"], elimina todas las
+ocurrencias del nombre que introduzca el usuario hasta que escriba “salir” o el
+array no tenga elementos.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let array = ["Ana", "Pedro", "Marta", "Pedro", "Lucía", "Javier"];
+
+    while (array.length > 0) {
+        let nombre = prompt("Introduzca un nombre para eliminar (o 'salir' para terminar):");
+
+        if (nombre === "salir") {
+            break;
+        }
+
+        if (array.includes(nombre)) {
+            // Eliminar todas las ocurrencias
+            array = array.filter(function(item) {
+            return item !== nombre;
+            });
+            console.log("Se han eliminado todas las ocurrencias de:", nombre);
+        } else {
+            alert("El nombre indicado no se encuentra en el array");
+        }
+    }
+
+    alert("Proceso terminado. Array final: " + array.join(", "));
+</script>
+</body>
+</html>

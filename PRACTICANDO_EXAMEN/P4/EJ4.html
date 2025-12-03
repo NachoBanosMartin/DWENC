@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--Pide al usuario que introduzca una lista de números e imprime la suma de los
+pares y la suma de los impares.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numeros = prompt("Introduce una serie de números:");
+        let pares = [];
+        let impares = [];
+        for(let i = 0; i < numeros.length; i++){
+            if(parseInt(numeros[i]) % 2 == 0){
+                pares.push(numeros[i]);
+            }else{
+                impares.push(numeros[i]);
+            }
+        }
+        
+    </script>
+</body>
+</html>

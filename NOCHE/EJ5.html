@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--Crea dos arrays paralelos: nombres y notas. Pide un nombre al usuario y muestra
+su nota.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let nombres = ["Perico", "Venganito", "Fulanito"];
+        let notas = [5, 3, 7];
+
+        let peticion = prompt("Introduzca un nombre para saber la nota:");
+        let indice = nombres.indexOf(peticion);
+        if(indice !== -1){
+            console.log("La nota de " + peticion + " es: " + notas[indice]);
+        }else{
+            console.error(nombreUsuario + " no está en la lista.");
+        }
+    </script>
+</body>
+</html>

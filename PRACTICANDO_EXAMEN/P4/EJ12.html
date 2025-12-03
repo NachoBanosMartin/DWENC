@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<!--12.Dado el array de notas = [5, 8, 4, 9, 3, 7]. Pide al usuario que introduzca una nueva
+nota que se añadirá y se mostrará el array actualizado. Calcula la nota media de la
+clase y elimina la nota más baja. Por último, muestra el array final.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let notas = [5, 8, 4, 9, 3, 7];
+        let nueva = parseInt(prompt("Introduce una nueva nota:"));
+        let suma = 0;
+        notas.push(nueva);
+        console.log(notas);
+        for(let i = 0; i < notas.length; i++){
+            suma += notas[i];
+            i++;
+        }
+
+        console.log("La media de las notas es", suma/notas.length);
+        let minima = Math.min(...notas);
+        console.log("La nota más baja es:", minima);
+
+        let index = notas.indexOf(minima);
+        notas.splice(index, 1);
+        console.log("El array de notas final es:", notas)
+
+    </script>
+</body>
+</html>

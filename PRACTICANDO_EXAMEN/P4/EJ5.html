@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!--Pide al usuario una lista de números y muestra el mayor de ellos.-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let numeros = prompt("Introduzca una lista de números");
+        // Convertimos la cadena en array de strings
+        let lista = numeros.split(",");
+        // Inicializamos el mayor con el primer número
+        let mayor = parseInt(lista[0]);
+        // Recorremos el resto del array
+        for (let i = 1; i < lista.length; i++){
+            let numero = parseInt(lista[i]);
+            if(numero > mayor){
+                mayor = numero;
+            }
+        }
+        // Mostramos el resultado
+        document.write("<h2>El mayor número es: " + mayor + "</h2>");
+    </script>
+</body>
+</html>
