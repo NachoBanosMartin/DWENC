@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Sorteo</title>
+</head>
+<body>
+    <h2>Sorteo</h2>
+    <label for="nombre">Nombre: </label>
+        <input type="text" id="nombreInput">
+    <br><br>
+    <button onclick="agregarParticipante()">Agregar participante</button>
+    <button onclick="mostrarParticipantes()">Mostrar participantes</button>
+    <button onclick="sortearGanador()">Sortear ganador</button>
+    <button onclick="reiniciarSorteo()">Reiniciar sorteo</button>
+
+    <script>
+        let participantes = [];
+
+        function agregarParticipante() {
+            let nombre = document.getElementById("nombreInput").value.trim();
+            if (nombre === "") {
+                alert("Error: el nombre no puede estar vacío.");
+            } else {
+                participantes.push(nombre);
+                alert(nombre + " ha sido agregado al sorteo.");
+                document.getElementById("nombreInput").value = "";
+            }
+        }
+
+        function mostrarParticipantes() {
+            if (participantes.length === 0) {
+                alert("No hay participantes en el sorteo.");
+            } else {
+                let lista = "Participantes:\n";
+                for (let i = 0; i < participantes.length; i++) {
+                    lista += "- " + participantes[i] + "\n";
+                }
+                alert(lista);
+            }
+        }
+
+        function sortearGanador() {
+            if (participantes.length === 0) {
+                alert("No hay participantes para el sorteo.");
+            } else {
+                let indiceGanador = Math.floor(Math.random() * participantes.length);
+                let ganador = participantes[indiceGanador];
+                alert("El ganador es: " + ganador);
+                participantes.splice(indiceGanador, 1);
+            }
+        }
+
+        function reiniciarSorteo() {
+            participantes = [];
+            alert("El sorteo ha sido reiniciado.");
+        }
+    </script>
+</body>
+
+</html>

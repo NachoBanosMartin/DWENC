@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <script>
+        class Persona {
+
+            constructor(nombre, apellido, telefono, anioNacimiento) {
+                this.nombre = nombre;
+                this.apellido = apellido;
+                this.telefono = telefono;
+                this.anioNacimiento = anioNacimiento;
+            }
+
+            edad() {
+                let anioActual = new Date().getFullYear();
+                return anioActual - this.anioNacimiento;
+            }
+        }
+
+        function mostrarPersona(p) {
+            console.log("Nombre: " + p.nombre);
+            console.log("Apellido: " + p.apellido);
+            console.log("Teléfono: " + p.telefono);
+            console.log("Año de nacimiento: " + p.anioNacimiento);
+            console.log("Edad: " + p.edad() + " años");
+        }
+
+        let persona1 = new Persona("Ana", "García", "654321987", 1990);
+
+        mostrarPersona(persona1);
+    </script>
+</body>
+</html>

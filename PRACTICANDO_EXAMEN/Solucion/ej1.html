@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Arrays</title>
+</head>
+<body>
+    <script>
+        let nombres = ["Ana", "Carlos", "María", "Javier", "Pedro"];
+        let edades = [62, 3, 19, 40, 11];
+
+        for (let i = 0; i < nombres.length; i++) {
+            console.log(nombres[i] + " tiene " + edades[i] + " años.");
+        }
+
+        let nombreBuscado = prompt("Introduce un nombre:");
+        let encontrado = false;
+
+        for (let i = 0; i < nombres.length; i++) {
+            if (nombres[i].toLowerCase() === nombreBuscado.toLowerCase()) {
+                console.log(nombres[i] + " tiene " + edades[i] + " años.");
+                encontrado = true;
+                break;
+            }
+        }
+        if (!encontrado) {
+            console.log("Error: nombre no encontrado.");
+        }
+
+        let suma = 0;
+        for (let i = 0; i < edades.length; i++) {
+            suma += edades[i];
+        }
+        let promedio = suma / edades.length;
+        console.log("El promedio de edades es " + promedio);
+
+        let edadMax = edades[0];
+        let edadMin = edades[0];
+        let indiceMax = 0;
+        let indiceMin = 0;
+
+        for (let i = 1; i < edades.length; i++) {
+            if (edades[i] > edadMax) {
+                edadMax = edades[i];
+                indiceMax = i;
+            }
+            if (edades[i] < edadMin) {
+                edadMin = edades[i];
+                indiceMin = i;
+            }
+        }
+
+        console.log("La persona de mayor edad es " + nombres[indiceMax] + " con " + edadMax + " años.");
+        console.log("La persona de menor edad es " + nombres[indiceMin] + " con " + edadMin + " años.");
+
+        console.log("Mayores de edad:");
+        for (let i = 0; i < nombres.length; i++) {
+            if (edades[i] >= 18) {
+                console.log(nombres[i]);
+            }
+        }
+    </script>
+</body>
+</html>
