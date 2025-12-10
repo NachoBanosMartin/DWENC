@@ -30,6 +30,7 @@ function registrarUsuario() {
     emails.push(email);
 
     /*
+    
     Nota: Cada vez que se llama a window.open() con el mismo nombre de ventana,
     el contenido anterior se reemplaza, por lo que sólo
     se muestra el último dato introducido en el array.
