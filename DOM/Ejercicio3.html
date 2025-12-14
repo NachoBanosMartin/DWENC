@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear elementos DOM</title>
+
+    <script>
+        let contador = 1;
+        function anadirElemento() {
+
+            let nuevoLi = document.createElement("li");
+            let texto = document.createTextNode("Elemento " + contador);
+
+            nuevoLi.appendChild(texto);
+            document.getElementById("lista").appendChild(nuevoLi);
+
+            contador++;
+        }
+    </script>
+</head>
+<body>
+    <button onclick="anadirElemento()">Añadir elemento</button>
+    <ul id="lista"></ul>
+</body>
+</html>
