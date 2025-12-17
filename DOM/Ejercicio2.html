@@ -6,8 +6,8 @@
 
     <script>
         function cambiarTexto() {
-            document.getElementById("parrafo").innerHTML =
-                "El contenido ha sido actualizado mediante DOM.";
+            let parrafo = document.getElementById("texto");
+            parrafo.textContent = "El contenido ha sido actualizado mediante DOM.";                
         }
     </script>
 </head>

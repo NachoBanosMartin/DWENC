@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--5. Crea dos botones: “+1” y “-1”. Crea un texo con un contador, que su valor debe
+actualizarse en pantalla al pulsar los botones.v -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let contador = 0;
+
+        function sumar(){
+            contador ++;
+            actualizar();
+        }
+
+        function restar(){
+            contador --;
+            actualizar();
+        }
+
+        function actualizar(){
+            let pantalla = document.getElementById("contador");
+            pantalla.textContent = "Contador" + contador;
+        }
+        
+    </script>
+
+    <h2>Contador:</h2>
+
+    <button onclick="sumar()">+1</button>
+    <button onclick="restar()">-1</button>
+</body>
+</html>

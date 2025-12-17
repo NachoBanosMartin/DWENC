@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--6. Descarga las imágenes de los animales. Crea un <img> y tres botones:
+    - Perro
+    - Gato
+    - Conejo
+Cuando el usuario pulse cada botón, se debe cambiar la imagen al animal elegido
+usando setAttribute().-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function cambiar(imagen){
+            document.getElementById("animal").setAttribute("src", imagen);
+        }
+    </script>
+    <img id="animal" src="conejo.jpg" width="300"><br>
+    <button onclick="cambiar('conejo.jpg')">Conejo</button>
+    <button onclick="cambiar('gato.jpg')">Gato</button>
+    <button onclick="cambiar('perro.png')">Perro</button>
+</body>
+</html>
