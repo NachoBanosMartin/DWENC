@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
+    <script>
+        let contador = 0;
+
+        function añadirElemento(){
+            contador++;
+
+            // Crear el elemento li
+            let nuevoLi = document.createElement("li");
+
+            // Crear el texto
+            let texto = document.createTextNode("Elemento " + contador);
+
+            // Añadir el texto al li
+            nuevoLi.appendChild(texto);
+
+            // Añadir el li a la lista
+            document.getElementById("lista").appendChild(nuevoLi);
+        }
+    </script>
+</head>
+<body>    
+    <button onclick="añadirElemento()">Añadir elemento</button>
+    <ul id="lista"></ul>
+</body>
+</html>
