@@ -2,17 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>DOM Ejercicio 2</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 2</title>
     <script>
-        function cambiarTexto() {
-            let parrafo = document.getElementById("texto");
-            parrafo.textContent = "El contenido ha sido actualizado mediante DOM.";                
+        function cambiarTexto(){
+            document.getElementById("parrafo").innerHTML = 
+                "El contenido ha sido actualizado mediante DOM.";
         }
     </script>
 </head>
 <body>
-    <p id="parrafo">Texto original del párrafo.</p>
+    <p id="parrafo">Texto para el ejercicio</p>
     <button onclick="cambiarTexto()">Cambiar texto</button>
 </body>
 </html>

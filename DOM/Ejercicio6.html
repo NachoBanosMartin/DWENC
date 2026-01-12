@@ -13,13 +13,20 @@ usando setAttribute().-->
 </head>
 <body>
     <script>
-        function cambiar(imagen){
-            document.getElementById("animal").setAttribute("src", imagen);
+        function cambiar(animal){
+            let imagen = document.getElementById("imagen");
+            if(animal === "perro"){
+                imagen.setAttribute("src", "perro.png");
+            }elseif(animal === "gato");{
+                imagen.setAttribute("src", "gato.jpg");
+            }elseif(animal === "conejo");{
+                imagen.setAttribute("src", "conejo.jpg");
+            }
         }
     </script>
     <img id="animal" src="conejo.jpg" width="300"><br>
-    <button onclick="cambiar('conejo.jpg')">Conejo</button>
-    <button onclick="cambiar('gato.jpg')">Gato</button>
-    <button onclick="cambiar('perro.png')">Perro</button>
+    <button onclick="cambiar('conejo')">Conejo</button>
+    <button onclick="cambiar('gato')">Gato</button>
+    <button onclick="cambiar('perro')">Perro</button>
 </body>
 </html>

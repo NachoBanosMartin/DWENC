@@ -2,24 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Crear elementos DOM</title>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3</title>
     <script>
-        let contador = 1;
-        function anadirElemento() {
+        let contador = 0;
 
-            let nuevoLi = document.createElement("li");
-            let texto = document.createTextNode("Elemento " + contador);
-
-            nuevoLi.appendChild(texto);
-            document.getElementById("lista").appendChild(nuevoLi);
-
-            contador++;
+        function añadirElemento(){
+            let lista = document.getElementById("lista");
+            let li = document.createElement("li");
+            li.innerText = "Elemento " + contador ++;
+            lista.appendChild(li);
         }
     </script>
 </head>
-<body>
-    <button onclick="anadirElemento()">Añadir elemento</button>
+<body>    
+    <button id="agregar" onclick="añadirElemento()">Añadir elemento</button>
     <ul id="lista"></ul>
 </body>
 </html>

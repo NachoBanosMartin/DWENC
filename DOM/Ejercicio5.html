@@ -23,14 +23,14 @@ actualizarse en pantalla al pulsar los botones.v -->
 
         function actualizar(){
             let pantalla = document.getElementById("contador");
-            pantalla.textContent = "Contador" + contador;
+            pantalla.innerText = "Contador" + contador;
         }
         
     </script>
 
-    <h2>Contador:</h2>
+    <h2 id="contador">Contador: 0</h2>
 
-    <button onclick="sumar()">+1</button>
-    <button onclick="restar()">-1</button>
+    <button id="sumar" onclick="sumar()">+1</button>
+    <button id="restar" onclick="restar()">-1</button>
 </body>
 </html>

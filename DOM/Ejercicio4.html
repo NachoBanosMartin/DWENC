@@ -7,9 +7,7 @@
     <script>
         function eliminarUltimo() {
             let lista = document.getElementById("lista");
-
-            
-            if (lista.children.length > 0) {
+            if (lista.lastChild) {
                 let ultimo = lista.lastChild;
                 lista.removeChild(ultimo);
             }

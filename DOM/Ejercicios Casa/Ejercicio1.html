@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <title>Ejercicio 1</title>
-
     <script>
         function mostrarInfo() {
 
-            let datos = document.getElementsByName("dato");
+            let elementos = document.getElementsByName("dato");
             let inputs = document.getElementsByTagName("input");
-            let parrafo = document.getElementById("info");
-
-            // Valor del primer input con name="dato"
-            let primerDato = datos[0].value;
-            // Número total de inputs
+            let primero = elementos[0].value;
             let totalInputs = inputs.length;
-            // Mostrar la información
-            parrafo.innerHTML =
-                "Primer dato: " + primerDato + "<br>" +
+            document.getElementById("info").innerHTML =
+                "Primer dato: " + primero + "<br>" +
                 "Total de inputs: " + totalInputs;
         }
     </script>

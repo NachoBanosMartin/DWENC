@@ -13,12 +13,12 @@ indique.-->
         function generarTabla(){
             let numero = parseInt(document.getElementById("numero").value);
             let tabla = document.getElementById("tabla");
-            tabla.innerHTML;
+            tabla.innerHTML = "";
 
-            for (let i = 0; i <= numero; i++) {
+            for (let i = 1; i <= numero; i++) {
                 let fila = document.createElement("tr");
                 let celda = document.createElement("td");
-                celda.textContent = "Fila " + i;
+                celda.innerText = "Fila " + i;
                 fila.appendChild("celda");
                 tabla.appendChild("fila");
                 
@@ -26,10 +26,10 @@ indique.-->
         }
     </script>
     <form action="" method="post">
-        <label>Número de filas:</label>
-            <input type="number" name="filas" id="filas" min="0">
+        <label for="numero">Número de filas:</label>
+        <input type="number" name="filas" id="filas" min="0"><br>
         
-        <button onclick="generarTabla()">Generar Tabla</button>
+        <button id="generar" onclick="generarTabla()">Generar Tabla</button>
         <table id="tabla" border="1px"></table>
     </form>
 </body>

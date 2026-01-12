@@ -1,33 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>DOM Ejercicio</title>
-
+    <title>Ejercicio 1</title>
     <script>
         function mostrarInfo() {
-            let primero = document.getElementsByName("dato")[0].value;
-            let totalInputs = document.getElementsByTagName("input").length;
 
+            let elementos = document.getElementsByName("dato");
+            let inputs = document.getElementsByTagName("input");
+            let primero = elementos[0].value;
+            let totalInputs = inputs.length;
             document.getElementById("info").innerHTML =
-                "Valor del primer input: " + primero + "<br>" +
-                "Número total de inputs: " + totalInputs;
+                "Primer dato: " + primero + "<br>" +
+                "Total de inputs: " + totalInputs;
         }
     </script>
 </head>
 <body>
-    <p>
-        <input type="text" name="dato" value="Primero">
-    </p>
-    <p>
-        <input type="text" name="dato" value="Segundo">
-    </p>
-    <p>
-        <input type="text" name="dato" value="Tercero">
-    </p>
-    <p>
-        <button onclick="mostrarInfo()">Mostrar datos</button>
-    </p>
+    <input type="text" name="dato" value="Primero"><br>
+    <input type="text" name="dato" value="Segundo"><br>
+    <input type="text" name="dato" value="Tercero"><br>
+
     <p id="info"></p>
+
+    <button onclick="mostrarInfo()">Mostrar información</button>
 </body>
 </html>
