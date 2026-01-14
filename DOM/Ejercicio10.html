@@ -1,26 +1,33 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicio 10</title>
     <script>
-        let contador = 0;
+        function contarImagenes() {
 
-        function contar(){
-            let todasLasImagenes = document.querySelectorAll('img');
-            let numeroImagenes = todasLasImagenes.length;
+            let imagenes = document.getElementsByTagName("img");
+            let resultado = document.getElementById("resultado");
+
+            resultado.innerHTML = "Número de imágenes: " + imagenes.length + "<br><br>";
+
+            for (let i = 0; i < imagenes.length; i++) {
+                let nombreImagen = imagenes[i].src.split("/").pop();
+                resultado.innerHTML +=
+                    "Imagen " + (i + 1) + ": " + nombreImagen + "<br>";
+            }
         }
     </script>
 </head>
 <body>
-    <img id="perro" src="perro.png" width="200" height="150">
-    <img id="gato" src="gato.jpg" width="200" height="150">
-    <img id="conejo" src="conejo.jpg" width="200" height="150">
-    <img id="coche" src="coche.png" width="200" height="150">
-    <img id="moto" src="moto.jpg" width="200" height="150"><br>
+    <img src="perro.png" width="150">
+    <img src="gato.jpg" width="150">
+    <img src="conejo.jpg" width="150">
+    <img src="coche.png" width="150">
+    <img src="moto.jpg" width="150"><br><br>
 
-    <button onclick="contar()">Contar</button>
-    <ul id="lista"></ul>
+    <button onclick="contarImagenes()">Contar</button>
+
+    <p id="resultado">Número de imágenes: 0</p>
 </body>
 </html>

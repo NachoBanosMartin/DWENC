@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Imagen aleatoria</title>
+    <script>
+        function cambiarImagen() {
+
+            let imagenes = [
+                "perro.png",
+                "gato.jpg",
+                "conejo.jpg",
+                "coche.png",
+                "moto.jpg"
+            ];
+
+            let aleatorio = Math.floor(Math.random() * imagenes.length);
+
+            document.getElementById("imagen").src = imagenes[aleatorio];
+        }
+    </script>
 </head>
 <body>
-    
+    <img id="imagen" src="perro.png" width="300"><br><br>
+
+    <button onclick="cambiarImagen()">Imagen aleatoria</button>
 </body>
 </html>
