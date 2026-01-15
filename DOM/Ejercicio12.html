@@ -1,41 +1,35 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <title>Ejercicio 12</title>
-    <script>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Ejercicio 12</title>
+        <script>
         function crearTabla() {
-
             let imagenes = ["coche.png", "moto.jpg"];
             let textos = ["Un coche", "Una moto"];
 
             let tabla = document.getElementById("tabla");
 
             for (let i = 0; i < imagenes.length; i++) {
-
                 let fila = document.createElement("tr");
 
                 let celdaImagen = document.createElement("td");
                 let img = document.createElement("img");
-                img.src = imagenes[i];
-                img.width = 200;
-                celdaImagen.appendChild(img);
-
-                // Celda texto
+    
                 let celdaTexto = document.createElement("td");
                 let texto = document.createTextNode(textos[i]);
                 celdaTexto.appendChild(texto);
 
-                fila.appendChild(celdaImagen);
+                file.appendChild(celdaImagen);
                 fila.appendChild(celdaTexto);
 
                 tabla.appendChild(fila);
             }
         }
-    </script>
-</head>
-    <body onload="crearTabla()">
-
-    <table border="1" id="tabla"></table>
-</body>
+        </script>
+    </head>
+    <body>
+        <button onclick="crearTabla()">Crear Tabla</button><br />
+        <table border="1" id="tabla"></table>
+    </body>
 </html>
