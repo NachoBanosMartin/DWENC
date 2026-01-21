@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 17</title>
+</head>
+<body>
+    <button name="boton" value="1">Uno</button>
+    <button name="boton" value="2">Dos</button>
+    <button name="boton" value="3">Tres</button>
+
+    <p id="info"></p>
+
+    <script>
+        document.getElementsByName("boton").addEventListener("click", function() {
+            let elementos = document.getElementsByName("boton");
+            document.getElementById("parrafo").innerHTML = 
+                "El botón pulsado es el: Botón " + elementos;
+        });
+    </script>
+</body>
+</html>

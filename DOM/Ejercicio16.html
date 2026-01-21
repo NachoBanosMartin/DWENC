@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 16</title>
+</head>
+<body>
+    <input type="text" id="texto"><br>
+    <p id="info"></p>
+
+    <script>
+        let texto = document.getElementById("texto");
+
+        texto.addEventListener("keydown", function() {
+
+            if(event.key == " "){
+                document.getElementById("info").textContent = "Tecla pulsada: Espacio"
+            }else{
+                document.getElementById("info").textContent = "Tecla pulsada: " + event.key;
+            }
+        });
+    </script>
+</body>
+</html>
