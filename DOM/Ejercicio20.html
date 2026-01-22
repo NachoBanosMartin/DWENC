@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="nombre">Nombre:</label>
+            <input type="text" name="nombre"><br><br>
+        <label for="edad">Edad:</label>
+            <input type="number" name="edad" min="0"><br><br>
+        
+        <button type="submit" name="anadir">Añadir Usuario</button><br><br>
+        <button type="submit" name="eliminar">Eliminar último usuario</button>
+
+        <p id="info"></p>
+        <ul id="lista"></ul>        
+    </form>
+    <script>
+        function mostrarInfo() {
+
+            let nombres = document.getElementsByName("nombre");
+            let edades = document.getElementsByName("edad");
+            document.getElementById('info').innerHTML = "Lista de usuarios:"
+            document.getElementById("lista").innerHTML =
+                "Primer dato: " + primero + "<br>" +
+                "Total de inputs: " + totalInputs;
+        }
+    </script>
+</body>
+</html>
