@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="email">Email:</label><br>
+            <input type="text" name="email"><br><br>
+            <p id="mensajeEmail"></p>
+        <label for="contrasenia">Contraseña:</label><br>
+            <input type="number" name="pass"><br><br>
+            <p id="mensajePass"></p>
+        
+        <button type="submit" name="enviar">Enviar</button>     
+    </form>
+    <script>
+        let email = document.getElementsByName("email");
+        let pass = document.getElementsByName("pass");
+        let validacion = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+
+        if(!validacion.test(email)){
+            document.getElementById("mensajeEmail").innerHTML = "Error, email incorrecto";
+        }else {
+            document.getElementById("mensajeEmail").innerHTML = " ";
+        }
+
+        if(pass.length < 8){
+            document.getElementById("mensajePass").innerHTML = "Error, contraseña demasiado corta";
+        }else{
+            document.getElementById("mensajePass").innerHTML = " ";
+        }
+        
+    </script>
+</body>
+</html>
