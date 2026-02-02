@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", "datos.txt", true);
+        xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+        alert(xhr.responseText); //Se muestra el contenido recibido del fichero datos
+        }
+        else{
+        alert("Error: " + xhr.status); //Se muestra el código de estado si hay un error
+        }
+        };
+        xhr.send();
+    </script>
+</body>
+</html>

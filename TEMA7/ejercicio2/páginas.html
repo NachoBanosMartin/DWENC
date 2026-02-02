@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="cargaPagina('inicio.html')">Inicio</button>
+    <button onclick="cargaPagina('servicios.html')">Servicios</button>
+    <button onclick="cargaPagina('contacto.html')">Contactos</button>
+    <div id="caja"></div>
+
+    <script>
+        function cargaPagina(pagina) {
+            let xhr = new XMLHttpRequest();
+            xhr.open('GET', pagina, true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    document.getElementById('caja').innerHTML = xhr.responseText;
+                }
+            }
+            xhr.send();
+        };
+    </script>
+</body>
+</html>

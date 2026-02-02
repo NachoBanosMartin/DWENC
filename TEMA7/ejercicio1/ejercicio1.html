@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Cargar un mensaje externo</h2>
+    <button onclick="cargarTexto()">Cargar Mensaje</button>
+    <div id="resultado"></div>
+
+    <script>
+        function cargarTexto(){
+            let peticion = new XMLHttpRequest();
+            peticion.open("GET", "mensaje.txt", true);      
+
+
+            peticion.onreadystatechange = function () {
+                if (peticion.readyState === 4 && peticion.status === 200) {
+                    document.getElementById("resultado").innerHTML = peticion.responseText;
+                }
+            };
+            peticion.send();
+        }
+    </script>
+</body>
+</html>
