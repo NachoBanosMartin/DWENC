@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    <div id="usuario"></div>
+    <script>
+        fetch("usuario.json")
+        .then(res => res.json())
+        .then(obj => document.getElementById("usuario").innerHTML = "Nombre: " + obj.nombre + "<br>Edad: " + obj.edad); 
+
+    </script>
+</body>
+</html>

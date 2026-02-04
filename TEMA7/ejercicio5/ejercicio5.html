@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 5</title>
+</head>
+<body>
+    
+    <h3>Nombres</h3>
+    <div id="nombre"></div>   
+
+    <script>
+        fetch("nombres.json")
+        .then(respuesta => respuesta.json())
+        .then(objeto => {
+            let lista = "<ul>";
+                objeto.forEach(element => {
+                    lista += "<li>" + element + "</li>";
+                });
+        
+            lista += "</ul>";
+        
+            document.getElementById("nombre").innerHTML = lista;
+        });       
+    </script>
+</body>
+</html>
+
