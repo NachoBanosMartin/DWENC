@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="cargarTexto1()">Texto 1</button>
+    <button onclick="cargarTexto2()">Texto 2</button>
+    <button onclick="cargarTexto3()">Texto 3</button>
+    <div id="caja"></div>
+
+    <script>
+        function cargarTexto1(){
+            let peticion = new XMLHttpRequest();
+            peticion.open("GET", "uno.txt", true);      
+
+
+            peticion.onreadystatechange = function () {
+                if (peticion.readyState === 4 && peticion.status === 200) {
+                    document.getElementById("caja").innerHTML = peticion.responseText;
+                }
+            };
+            peticion.send();
+        }
+
+        function cargarTexto2(){
+            let peticion = new XMLHttpRequest();
+            peticion.open("GET", "dos.txt", true);      
+
+
+            peticion.onreadystatechange = function () {
+                if (peticion.readyState === 4 && peticion.status === 200) {
+                    document.getElementById("caja").innerHTML = peticion.responseText;
+                }
+            };
+            peticion.send();
+        }
+
+        function cargarTexto3(){
+            let peticion = new XMLHttpRequest();
+            peticion.open("GET", "tres.txt", true);      
+
+
+            peticion.onreadystatechange = function () {
+                if (peticion.readyState === 4 && peticion.status === 200) {
+                    document.getElementById("caja").innerHTML = peticion.responseText;
+                }
+            };
+            peticion.send();
+        }
+    </script>
+</body>
+</html>

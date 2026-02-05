@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="precios"></div>
+    <script>
+        fetch("precios.json")
+        .then(respuesta => respuesta.json())
+        .then(objeto => {
+            let total = 0;
+                for (let i; i < objeto.length; i++) {
+                    total +=                     
+                }
+                
+            document.getElementById("precios").innerHTML = "El precio total es de: " + total;
+        });       
+    </script>
+</body>
+</html>
