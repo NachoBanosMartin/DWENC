@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="cargarTexto()">Botón 1</button>
+    <button onclick="cargarJson()">Botón 2</button>
+    <button onclick="cargarHtml()">Botón 3</button>
+
+    <div id="caja"></div>
+
+    <script>
+        function cargarTexto(){
+            let peticion = new XMLHttpRequest();
+            peticion.open("GET", "mensaje.txt", true);      
+
+
+            peticion.onreadystatechange = function () {
+                if (peticion.readyState === 4 && peticion.status === 200) {
+                    document.getElementById("caja").innerHTML = peticion.responseText;
+                }
+            };
+            peticion.send();
+        }
+
+        function cargarJson(){
+            fetch("usuario.json")
+            .then(res => res.json())
+            .then(obj => document.getElementById("caja").innerHTML = "Nombre: " + obj.nombre + "<br>Edad: " + obj.edad); 
+        }
+
+        function cargarHtml(){
+            let peticion = new XMLHttpRequest();
+            peticion.open("GET", "servicios.html", true);  
+
+            peticion.onreadystatechange = function () {
+                if (peticion.readyState === 4 && peticion.status === 200) {
+                    document.getElementById("caja").innerHTML = peticion.responseText;
+                }
+            };
+            peticion.send();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="mostrarTodos()">Mostrar todos</button>
+    <button onclick="mostrarMazdas()">Mazda</button>
+    <button onclick="mostrarAzules()">Azules</button>
+    <button onclick="mostrarElectricos()">Eléctricos</button>
+    <button onclick="mostrarPrecioAscendente()">Precio Ascendente</button>
+    <button onclick="mostrarPrecioDescendiente()">Precio Descendiente</button>
+    <button onclick="mostrarPrecioRango()">Precio 20.000 a 30.000</button>
+    <button onclick="mostrarToyotasHibridos()">Toyotas Híbridos</button>
+
+    <div id="coches"></div>  
+    
+    <script>
+        function mostrarTodos(){
+            fetch("coches.json")
+            .then(respuesta => respuesta.json())
+            .then(objeto => {
+                let lista = "<ul>";
+                    objeto.forEach(element => {
+                        lista += "<li>" + element + "</li>";
+                    });
+            
+                lista += "</ul>";
+            
+                document.getElementById("coches").innerHTML = lista;
+            }); 
+        }
+
+        function mostrarMazdas(){
+            fetch("coches.json")
+            .then(respuesta => respuesta.json())
+            .then(objeto => {
+                if(objeto.marca == "Mazda"){
+                    for (let i = 0; i < objeto.length; i++) { 
+                        let lista = "<ul>";
+                            objeto.forEach(element => {
+                                lista += "<li>" + element + "</li>";
+                    });
+            
+                    lista += "</ul>";
+            
+                    document.getElementById("coches").innerHTML = lista;
+                }
+                }
+            }); 
+        }
+
+        function mostrarAzules(){
+
+        }
+    </script>
+</body>
+</html>

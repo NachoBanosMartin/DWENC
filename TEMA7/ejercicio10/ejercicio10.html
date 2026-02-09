@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 10</title>
+</head>
+<body>
+    <div id="productos"></div>
+    <script>
+        fetch("productos.json")
+        .then(res => res.json())
+        .then(obj => {
+            if(obj.precio >= 20){
+                for (let i = 0; i < objeto.length; i++) { 
+                    document.getElementById("productos").innerHTML = "Nombre: " + obj.nombre + "- Precio: " + obj.precio + "<br>"
+                }
+            }
+        });
+    </script>
+</body>
+</html>
