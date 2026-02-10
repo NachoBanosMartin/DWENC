@@ -10,13 +10,15 @@
     <script>
         fetch("productos.json")
         .then(res => res.json())
-        .then(obj => {
-            if(obj.precio >= 20){
-                for (let i = 0; i < objeto.length; i++) { 
-                    document.getElementById("productos").innerHTML = "Nombre: " + obj.nombre + "- Precio: " + obj.precio + "<br>"
-                }
-            }
-        });
+        .then(productos => {
+            productos.forEach(producto => {
+                if (producto.precio >= 20) {
+                    document.getElementById("productos").innerHTML +=
+                        "Nombre: " + producto.nombre +
+                        " - Precio: " + producto.precio + " €<br>";
+                    }
+                });
+            });
     </script>
 </body>
 </html>

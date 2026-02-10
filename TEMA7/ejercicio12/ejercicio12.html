@@ -18,43 +18,161 @@
     <div id="coches"></div>  
     
     <script>
-        function mostrarTodos(){
+        function mostrarTodos() {
             fetch("coches.json")
-            .then(respuesta => respuesta.json())
-            .then(objeto => {
-                let lista = "<ul>";
-                    objeto.forEach(element => {
-                        lista += "<li>" + element + "</li>";
+                .then(res => res.json())
+                .then(coches => {
+                    let html = "<ul>";
+                    coches.forEach(coche => {
+                        html += "<li>" +
+                            coche.marca + " / " +
+                            coche.modelo + " / " +
+                            coche.color + " / " +
+                            coche.tipo + " / " +
+                            coche.precio + " €</li>";
                     });
-            
-                lista += "</ul>";
-            
-                document.getElementById("coches").innerHTML = lista;
-            }); 
+                    html += "</ul>";
+                    document.getElementById("coches").innerHTML = html;
+                });
         }
 
-        function mostrarMazdas(){
+        function mostrarMazdas() {
             fetch("coches.json")
-            .then(respuesta => respuesta.json())
-            .then(objeto => {
-                if(objeto.marca == "Mazda"){
-                    for (let i = 0; i < objeto.length; i++) { 
-                        let lista = "<ul>";
-                            objeto.forEach(element => {
-                                lista += "<li>" + element + "</li>";
+                .then(res => res.json())
+                .then(coches => {
+                    let html = "<ul>";
+                    coches.forEach(coche => {
+                        if (coche.marca == "Mazda") {
+                            html += "<li>" +
+                                coche.marca + " / " +
+                                coche.modelo + " / " +
+                                coche.color + " / " +
+                                coche.tipo + " / " +
+                                coche.precio + " €</li>";
+                        }
                     });
-            
-                    lista += "</ul>";
-            
-                    document.getElementById("coches").innerHTML = lista;
-                }
-                }
-            }); 
+                    html += "</ul>";
+                    document.getElementById("coches").innerHTML = html;
+                });
         }
 
-        function mostrarAzules(){
-
+        function mostrarAzules() {
+            fetch("coches.json")
+                .then(res => res.json())
+                .then(coches => {
+                    let html = "<ul>";
+                    coches.forEach(coche => {
+                        if (coche.color == "Azul") {
+                            html += "<li>" +
+                                coche.marca + " / " +
+                                coche.modelo + " / " +
+                                coche.color + " / " +
+                                coche.tipo + " / " +
+                                coche.precio + " €</li>";
+                        }
+                    });
+                    html += "</ul>";
+                    document.getElementById("coches").innerHTML = html;
+                });
         }
-    </script>
+
+        function mostrarElectricos() {
+            fetch("coches.json")
+                .then(res => res.json())
+                .then(coches => {
+                    let html = "<ul>";
+                    coches.forEach(coche => {
+                        if (coche.tipo == "Eléctrico") {
+                            html += "<li>" +
+                                coche.marca + " / " +
+                                coche.modelo + " / " +
+                                coche.color + " / " +
+                                coche.tipo + " / " +
+                                coche.precio + " €</li>";
+                        }
+                    });
+                    html += "</ul>";
+                    document.getElementById("coches").innerHTML = html;
+                });
+        }
+
+        function mostrarPrecioAscendente() {
+            fetch("coches.json")
+                .then(res => res.json())
+                .then(coches => {
+                    coches.sort((a, b) => a.precio - b.precio);
+                    let html = "<ul>";
+                    coches.forEach(coche => {
+                        html += "<li>" +
+                            coche.marca + " / " +
+                            coche.modelo + " / " +
+                            coche.color + " / " +
+                            coche.tipo + " / " +
+                            coche.precio + " €</li>";
+                    });
+                    html += "</ul>";
+                    document.getElementById("coches").innerHTML = html;
+                });
+        }
+
+        function mostrarPrecioDescendiente() {
+            fetch("coches.json")
+                .then(res => res.json())
+                .then(coches => {
+                    coches.sort((a, b) => b.precio - a.precio);
+                    let html = "<ul>";
+                    coches.forEach(coche => {
+                        html += "<li>" +
+                            coche.marca + " / " +
+                            coche.modelo + " / " +
+                            coche.color + " / " +
+                            coche.tipo + " / " +
+                            coche.precio + " €</li>";
+                    });
+                    html += "</ul>";
+                    document.getElementById("coches").innerHTML = html;
+                });
+        }
+
+        function mostrarPrecioRango() {
+            fetch("coches.json")
+                .then(res => res.json())
+                .then(coches => {
+                    let html = "<ul>";
+                    coches.forEach(coche => {
+                        if (coche.precio >= 20000 && coche.precio <= 30000) {
+                            html += "<li>" +
+                                coche.marca + " / " +
+                                coche.modelo + " / " +
+                                coche.color + " / " +
+                                coche.tipo + " / " +
+                                coche.precio + " €</li>";
+                        }
+                    });
+                    html += "</ul>";
+                    document.getElementById("coches").innerHTML = html;
+                });
+        }
+
+        function mostrarToyotasHibridos() {
+            fetch("coches.json")
+                .then(res => res.json())
+                .then(coches => {
+                    let html = "<ul>";
+                    coches.forEach(coche => {
+                        if (coche.marca == "Toyota" && coche.tipo == "Hibrido") {
+                            html += "<li>" +
+                                coche.marca + " / " +
+                                coche.modelo + " / " +
+                                coche.color + " / " +
+                                coche.tipo + " / " +
+                                coche.precio + " €</li>";
+                        }
+                    });
+                    html += "</ul>";
+                    document.getElementById("coches").innerHTML = html;
+                });
+        }
+</script>
 </body>
 </html>
