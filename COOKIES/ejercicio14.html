@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contador de visitas</h1>
+    <p id="contador"></p>
+    <script>
+        document.cookie = "user=Nacho; expires=Thu, 18 Jun 2026 12:00:00 UTC; path=/;";
+
+        let contador = 0;
+            
+        function leerCookies(nombre){
+            let cookies = document.cookie.split(";");
+            for (let i = 0; i < cookies.length; i++) {
+                let partes = cookies[i].split("=");
+                if(partes[0] === nombre){
+                    return partes[1];
+                    document.getElementById("contador").innerHTML = contador++;
+                }
+            }
+            return null;
+        }
+
+        function borrarCookie(nombre) {
+            document.cookie = nombre + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+        borrarCookie("nombre");
+    </script>
+    
+</body>
+</html>

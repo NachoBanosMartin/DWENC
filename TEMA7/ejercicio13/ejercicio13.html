@@ -25,11 +25,10 @@
             .then(res => res.json())
             .then(obj => {
                 let titulo = document.createElement("h1");
-                titulo.textContent = obj.name+" #"+obj.order; 
-                
+                titulo.textContent = obj.name+" #"+obj.order;                 
             })
         document.getElementById("estadisticas").innerHTML = "Nombre: " + obj.name; 
-                
+            
         }
     
     </script>
