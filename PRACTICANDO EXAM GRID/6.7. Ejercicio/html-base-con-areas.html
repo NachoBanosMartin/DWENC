@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grid. Líneas con nombre. Ejercicio</title>
+  <style>
+    body {
+      background-color: #f4f4f9;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr) repeat(2, auto);
+      grid-template-columns: repeat(4, auto);
+      grid-template-areas: 
+        "item1 item3   .     .  "
+        "  .   item2 item2 item2"
+        "item4 item4 item4 item4"
+        "item5 item5 item5 item5"
+        "item6 item6 item6 item6"
+      ;
+      gap: 10px;
+      max-width: 800px;
+      height: 400px;
+      background-color: #ffffff;
+      border: 2px solid #ddd;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 10px;
+    }
+
+    .grid-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #007BFF;
+      color: white;
+      font-size: 1.2rem;
+      font-weight: bold;
+      border: 1px solid #0056b3;
+      border-radius: 5px;
+    }
+
+    /*grid-area: <row-start> / <column-start> / <row-end> / <column-end>*/
+    .grid-item:nth-child(1){
+      grid-area: item1;
+    }
+
+    .grid-item:nth-child(2){
+      grid-area: item2;
+    }
+
+    .grid-item:nth-child(3){
+      grid-area: item3;
+    }
+
+    .grid-item:nth-child(4){
+      grid-area: item4;
+    }
+
+    .grid-item:nth-child(5){
+      grid-area: item5;
+    }
+
+    .grid-item:nth-child(6){
+      grid-area: item6;
+    }
+
+    /* Media query para pantallas mayores a 600px */
+    @media (min-width: 600px) {
+      .grid-container {
+        grid-template-rows: repeat(2, 1fr) auto 1fr 2fr;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+          "item1 item1"
+          "item2 item3"
+          "item2 item5"
+          "  .   item4"
+          "item6 item6"
+        ;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Grid con Áreas</h1>
+  <div class="grid-container">
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+  </div>
+</body>
+
+</html>

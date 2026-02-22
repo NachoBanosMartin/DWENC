@@ -1,0 +1,100 @@
+/* MÓVILES: <600px */
+@media (max-width: 600px) {
+  main {
+    /* grid-template-rows NO se modifica */
+    grid-template-rows: repeat(3, 50px);
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: auto;
+  }
+
+  main > div:nth-child(1) {
+    grid-area: 1 / 1 / 4 / -1;
+  }
+
+  main > div:nth-child(2) {
+    grid-area: 2 / 2 / 4 / -1;
+  }
+
+  main > div:nth-child(3) {
+    grid-area: 3 / 3 / 4 / -1;
+  }
+
+  main > div:nth-child(4) {
+    grid-area: 4 / 2 / 5 / 3;
+  }
+
+  main > div:nth-child(5) {
+    grid-area: 4 / 1 / 6 / 2;
+  }
+
+  main > div:nth-child(6) {
+    grid-area: 5 / 3 / 6 / -1;
+    display: grid;
+    place-content: center;
+  }
+}
+
+/* TABLETS: 600-900px */
+@media (min-width: 600px) and (max-width: 900px) {
+  main {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+      "uno    uno    dos"
+      "tres   tres   dos"
+      "cuatro cuatro seis"
+      "cinco    .    seis"
+    ;
+  }
+
+  main > div:nth-child(1) {
+    grid-area: uno;
+  }
+
+  main > div:nth-child(2) {
+    grid-area: dos;
+    align-self: end;
+  }
+
+  main > div:nth-child(3) {
+    grid-area: tres;
+  }
+
+  main > div:nth-child(4) {
+    grid-area: cuatro;
+  }
+
+  main > div:nth-child(5) {
+    grid-area: cinco;
+  }
+
+  main > div:nth-child(6) {
+    grid-area: seis;
+    justify-self: center;
+  }
+}
+
+/* ESCRITORIO: 1000+px */
+@media (min-width: 900px) {
+  main {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+
+  main > div:nth-child(1) {
+  }
+
+  main > div:nth-child(2) {
+    align-self: center;
+  }
+
+  main > div:nth-child(3) {
+  }
+
+  main > div:nth-child(4) {
+  }
+
+  main > div:nth-child(5) {
+  }
+
+  main > div:nth-child(6) {
+  }
+}
