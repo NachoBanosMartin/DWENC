@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        Crea una página con un botón “Imagen aleatoria” y una imagen de las que hemos estado utilizando.
+        Al pulsar el botón, debe cambiar la imagen mostrada por una de las siguientes, elegida de forma aleatoria: 
+        perro.png, gato.jpg, conejo.jpg, coche.png, moto.jpg.
+        */
+
+        function aleatorizarImagen() {
+
+            let imagenes = ["perro.png", "gato.jpg", "conejo.jpg", "coche.png", "moto.jpg"];
+            let indice = Math.floor(Math.random() * imagenes.length);
+            let nuevaImagen = document.getElementById("imagen");
+            nuevaImagen.setAttribute("src", imagenes[indice]);
+        }
+    </script>
+    <button onclick="aleatorizarImagen()">Imagen aleatoria</button>
+    <br><br>
+    <img id="imagen" src="moto.jpg" width="300">
+</body>
+</html>

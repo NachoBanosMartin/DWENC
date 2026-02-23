@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            2. Crea una página con un párrafo y un botón.
+            Cuando el usuario haga clic en el botón, el texto del párrafo debe cambiar a:
+            "El contenido ha sido actualizado mediante DOM."
+        */
+        function cambiarTexto() {
+            let parrafo = document.getElementById("provisional");
+            parrafo.innerHTML = "El contenido ha sido actualizado mediante DOM.";
+        }
+    </script>
+    <p id="provisional">Texto para el ejercicio</p>
+    <button id="cambiar" onclick="cambiarTexto()">Cambiar texto</button>
+</body>
+</html>

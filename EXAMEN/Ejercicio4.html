@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    /*
+    4. Partiendo de una lista con varios <li>, crea un botón “Eliminar último”. 
+    Al pulsarlo, debe borrarse el último elemento de la lista. 
+    */
+    function eliminar(){
+        let lista = document.getElementById("lista");
+        if(lista.lastChild){  //Si la lista tiene un último hijo, entonces haz algo
+            lista.removeChild(lista.lastChild);
+        }
+    }
+
+    </script>
+    <ul id="lista">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+        <li>Elemento 4</li>
+        <li>Elemento 5</li>
+    </ul>
+    <button onclick="eliminar()">Eliminar último elemento</button>
+</body>
+</html>

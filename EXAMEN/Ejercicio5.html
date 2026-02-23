@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            5. Crea dos botones: “+1” y “-1”.
+            El contador debe actualizarse en pantalla al pulsar los botones.
+        */
+        let contador = 0;
+
+        function sumar(){
+            contador++;
+            actualizar();
+        }
+
+        function restar(){
+            contador--;
+            actualizar();
+        }
+
+        function actualizar(){
+            let resultado = document.getElementById("contador");
+            resultado.innerHTML = "Contador: " + contador;
+        }
+    </script>
+    <h1 id="contador">Contador: 0</h1>
+    <button onclick="sumar()">+</button>
+    <button onclick="restar()">-</button>
+</body>
+</html>

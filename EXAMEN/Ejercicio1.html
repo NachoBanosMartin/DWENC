@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+</head>
+<body>
+    <script>
+        /*
+        1. Crea una página con:
+            3 cajas de texto con name="dato"
+            1 párrafo con id="info"
+            1 botón que, al pulsarlo, muestre en el párrafo:
+                • El valor del primer elemento con name="dato"
+                • El número total de inputs en la página
+        */
+        function mostrar(){
+            let elementos = document.getElementsByName("dato");
+            let inputs = document.getElementsByTagName("input");
+            let primero = elementos[0].value;
+            let totalInputs = inputs.length;
+            document.getElementById("info").innerHTML = "Primer dato: " +
+                primero + "<br>Total de inputs: " + totalInputs;
+        }
+    </script>
+
+    <input type="text" name="dato" value="Primero"><br>
+    <input type="text" name="dato" value="Segundo"><br>
+    <input type="text" name="dato" value="Tercero">
+
+    <p id="info"></p>
+
+    <button onclick="mostrar()">Mostrar info</button>
+</body>
+</html>

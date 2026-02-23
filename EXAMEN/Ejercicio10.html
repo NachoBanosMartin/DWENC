@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        10. Crea una página donde aparezcan las siguientes imágenes: perro.png, gato.jpg, conejo.jpg, coche.png, moto.jpg
+        Añade un botón que, al pulsarlo, muestre en la propia página el número de imágenes que hay 
+        junto con los datos de cada imagen (nombre.extensión).
+        */
+
+        function contarImagen() {
+        let imagenes = document.getElementsByTagName("img");
+        let parrafo= document.getElementById("imagenes");
+        parrafo.innerHTML = "Número de imágenes: " + imagenes.length;
+        for (let i = 0; i < imagenes.length; i++) {
+            parrafo.innerHTML += "<br>Imagen " + (i+1) + ": " + imagenes[i].getAttribute("src");
+        }
+        }
+    </script>
+    <img id="perro" src="perro.png" width="300">
+    <img id="gato" src="gato.jpg" width="300">
+    <img id="conejo" src="conejo.jpg" width="300">
+    <img id="coche" src="coche.png" width="300">
+    <img id="moto" src="moto.jpg" width="300">
+    <br>
+    <h4 id="imagenes">Número de imágenes: 0</h4>
+    <button onclick="contarImagen()">Contar</button>
+</body>
+</html>

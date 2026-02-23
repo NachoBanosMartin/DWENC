@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        8. El usuario introduce un número de filas y de columnas.
+        Al pulsar un botón, genera una tabla con tantas filas y columnas como se indiquen.
+        */
+        function generarTabla(){
+            let filas = parseInt(document.getElementById("filas").value);
+            let columnas = parseInt(document.getElementById("columnas").value);
+            tabla = document.getElementById("tabla");
+            tabla.innerHTML = "";
+
+            for(let i = 1; i <= filas; i++){
+                let fila = document.createElement("tr");
+                for(let j = 1; j <= columnas; j++){
+                    let celda =  document.createElement("td");
+                    celda.innerHTML = "Fila " + i + ", Columna " + j;
+                    fila.appendChild(celda)
+                }
+                tabla.appendChild(fila);
+            }
+        }
+    </script>
+    <label for="numero">Numero de filas:</label><br>
+    <input type="number" id="filas" name="filas"><br>
+    <label for="numero">Numero de columnas:</label><br>
+    <input type="number" id="columnas" name="columnas">
+    <button id="generar" onclick="generarTabla()">Generar tabla</button>
+    <table id="tabla" border="1"></table>
+</body>
+</html>
