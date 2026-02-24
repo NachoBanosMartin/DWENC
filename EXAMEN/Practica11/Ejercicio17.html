@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Uno</button>
+    <button>Dos</button>
+    <button>Tres</button>
+    <p id="informacion"></p>
+    <script>
+        /*
+        17. Crea varios botones. 
+        Al pulsar cualquiera de ellos, muestra cuál ha sido pulsado.
+        */
+        let botones = document.getElementsByTagName("button");
+        for(let i = 0; i < botones.length; i++){
+            botones[i].addEventListener("click", function(evento){
+                document.getElementById("informacion").innerHTML = "El botón pulsado es: " + evento.target.innerHTML;
+            })
+        }
+    </script>
+</body>
+</html>

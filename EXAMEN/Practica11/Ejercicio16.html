@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="input">
+    <p id="tecla"></p>
+    <script>
+    /*
+    16.  Muestra en pantalla la última tecla pulsada 
+    por el usuario en un campo de texto.
+    */
+    document.getElementById("input").addEventListener("keydown", function(event){
+        document.getElementById("tecla").innerHTML = "Tecla pulsada: " + event.key;
+        if(event.key === " "){
+            document.getElementById("tecla").innerHTML = "Tecla pulsada: Espacio";
+        }
+    })
+    </script>
+</body>
+</html>

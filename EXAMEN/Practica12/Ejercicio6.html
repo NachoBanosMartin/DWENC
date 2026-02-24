@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select onchange="cargar(this.value)">
+        <option value="">Selecciona categoría</option>
+        <option value="libros.json">Libros</option>
+        <option value="peliculas.json">Películas</option>
+    </select>
+    <div id="resultado"></div>
+    <script>
+        /*
+        6. Crea una página con un <select> que permita elegir Libros o Películas.
+        Al elegir la selección, se cargará el fichero peliculas.json o libros.json
+        y se mostrarán sus datos en la página dentro de una lista.
+        */
+        function cargar(archivo) {            
+            fetch(archivo)
+            .then(respuesta => respuesta.json())
+            .then(datos => {
+                let lista = "<ul>";
+                datos.forEach(elemento => {
+                    lista += "<li>" + elemento + "</li>";
+                });
+                lista += "</ul>";
+                document.getElementById("resultado").innerHTML = lista;
+            });
+        }
+    </script>
+</body>
+</html>

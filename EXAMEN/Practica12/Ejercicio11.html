@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="cargarTexto()">Texto</button>
+    <button onclick="cargarJSON()">JSON</button>
+    <button onclick="cargarHTML()">HTML</button>
+    <div id="resultado"></div>
+    <script>
+        /*
+        11. Crea tres botones:
+            • Uno carga texto desde mensaje.txt y lo muestra en un div.
+            • Otro carga datos desde usuario.json y los muestra en el div.
+            • Otro carga un HTML desde p_servicios.html y lo muestra en el div.
+        */
+
+        function cargarTexto() {
+            fetch("mensaje.txt")
+            .then(res => res.text())
+            .then(texto => {
+                document.getElementById("resultado").innerHTML = texto;
+            });
+        }
+
+        function cargarJSON() {
+            fetch("usuario.json")
+            .then(res => res.json())
+            .then(datos => {
+                document.getElementById("resultado").innerHTML =
+                    datos.nombre + ": " + datos.edad + " años";
+            });
+        }
+
+        function cargarHTML() {
+            fetch("p_servicios.html")
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("resultado").innerHTML = html;
+            });
+        }
+    </script>
+</body>
+</html>

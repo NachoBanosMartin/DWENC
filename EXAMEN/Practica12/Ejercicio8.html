@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="cargar('uno.txt')">Texto 1</button>
+    <button onclick="cargar('dos.txt')">Texto 2</button>
+    <button onclick="cargar('tres.txt')">Texto 3</button>
+    <div id="resultado"></div>
+    <script>
+        /*
+        8. Crea una página con tres botones.
+        Cada botón cargará un archivo de texto distinto (uno.txt, dos.txt, tres.txt)
+        y mostrará su contenido en la misma zona de la página sin recargarla.
+        */
+        function cargar(archivo) {
+            fetch(archivo)
+                .then(res => res.text())
+                .then(texto => {
+                    document.getElementById("resultado").innerHTML = texto;
+                });
+        }
+    </script>
+</body>
+</html>

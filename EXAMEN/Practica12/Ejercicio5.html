@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Lista de usuarios</h2>
+    <div id="resultado"></div>
+    <script>
+        /*
+        5. Carga el fichero nombres.json que contiene una lista de nombres y muéstralos en una lista.
+        */
+
+        fetch("nombres.json")
+        .then(respuesta => respuesta.json())
+        .then(nombres => {
+            let lista = "<ul>";
+            for (let i = 0; i < nombres.length; i++) {
+                lista += "<li>" + nombres[i] + "</li>";
+            }
+            lista += "</ul>";
+            document.getElementById("resultado").innerHTML = lista;
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="resultado"></div>
+    <script>
+        /*
+        10. Carga el fichero productos.json y muestra solo aquellos cuyo precio sea mayor o igual a 20 €.
+        */
+        fetch("productos.json")
+        .then(res => res.json())
+        .then(productos => {
+        let html = "<p>"; // Iniciamos un párrafo para listar los productos
+            for (let i = 0; i < productos.length; i++) {
+                if (productos[i].precio >= 20) {
+                    html += productos[i].nombre +  ": " + productos[i].precio + "€<br>"; // Añadimos una línea por cada producto
+                }
+            }
+            html += "</p>";
+            document.getElementById("resultado").innerHTML = html;
+        });
+    </script>
+</body>
+</html>

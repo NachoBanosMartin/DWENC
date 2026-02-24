@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="mostrarTodos()">Mostrar todos</button>
+    <button onclick="cochesMazda()">Mazda</button>
+    <button onclick="cochesAzules()">Azules</button>
+    <button onclick="cochesElectricos()">Eléctricos</button>
+    <button onclick="ordenarPrecioAsc()">Precio Ascendente</button>
+    <button onclick="ordenarPrecioDesc()">Precio Descendente</button>
+    <button onclick="cochesRangoPrecio()">Precio 20.000 a 30.000</button>
+    <button onclick="toyotaHibridos()">Toyota híbridos</button>
+    <br>
+    <div id="resultado"></div>
+    <script>
+        /*
+        12. Carga el fichero coches.json con información de coches 
+        y permitir al usuario filtrar y ordenar los datos mediante distintos botones.
+        */
+        let coches = [];
+        fetch("coches.json")
+            .then(respuesta => respuesta.json())
+            .then(datos => { //se obtienen los datos
+                coches = datos; //los datos se almacenan en la variable global coches
+            })
+            .catch(error => console.error(error));
+
+        function mostrarResultado(lista) {
+            let html = "<ul>";
+            lista.forEach(coche => {
+                html += "<li>" + coche.marca + " / " + coche.modelo + " / "
+                + coche.color + " / " + coche.precio + " €" + "</li>";
+            });
+            html += "</ul>";
+            document.getElementById("resultado").innerHTML = html;
+        }
+
+        function mostrarTodos() {
+            mostrarResultado(coches);
+        }
+
+        function cochesMazda() {
+            let resultado = coches.filter(c => c.marca === "Mazda");
+            mostrarResultado(resultado);
+        }
+
+        function cochesAzules() {
+            let resultado = coches.filter(c => c.color === "Azul");
+            mostrarResultado(resultado);
+        }
+
+        function cochesElectricos() {
+            let resultado = coches.filter(c => c.tipoMotor === "Eléctrico");
+            mostrarResultado(resultado);
+        }
+
+        function ordenarPrecioAsc() {
+            let resultado = coches.sort((a, b) => a.precio - b.precio);
+            mostrarResultado(resultado);
+        }
+
+        function ordenarPrecioDesc() {
+            let resultado = coches.sort((a, b) => b.precio - a.precio);
+            mostrarResultado(resultado);
+        }
+
+        function cochesRangoPrecio() {
+            let resultado = coches.filter(c => c.precio >= 20000 && c.precio <= 30000);
+            mostrarResultado(resultado);
+        }
+
+        function toyotaHibridos() {
+            let resultado = coches.filter(c => c.marca === "Toyota" && c.tipoMotor === "Híbrido");
+            mostrarResultado(resultado);
+        }
+    </script>
+</body>
+</html>

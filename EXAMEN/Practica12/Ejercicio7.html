@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="resultado"></div>
+    <script>
+        /*
+        7. Realiza una petición a un fichero que no existe y muestra un mensaje de error.
+        */
+        fetch("noexiste.json")
+        .then(res => {
+            if (!res.ok) {
+                throw new Error("Archivo no encontrado");
+            }
+            return res.json();
+        })
+        .catch(error => {
+            document.getElementById("resultado").innerHTML = "Error: " + error.message;
+        });
+    </script>
+</body>
+</html>

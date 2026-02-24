@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Última visita</h2>
+    <div id="caja"></div>
+    <hr>
+    <button onclick="borrarCookie('ultimaVisita')" >Resetear Visita</button>
+    <script>
+        /*
+        15. Utilizando cookies, muestra en la página la fecha y hora de la última visita del usuario a esa página.
+            - Cada vez que un usuario visite la página, se debe almacenar la fecha y hora actual en una cookie.
+            - Al cargar la página, se debe comprobar si existe la cookie con la fecha y hora de la última visita.
+            - Si la cookie existe, se muestra al usuario la fecha y hora de su última visita.
+            - Si no existe, se muestra un mensaje indicando que es la primera vez que visita la página.
+        */
+        // Función para obtener el valor de una cookie por su nombre
+        function leerCookie(nombre) {
+            let cookies = document.cookie.split("; ");
+            for (let i = 0; i < cookies.length; i++) {
+                let partes = cookies[i].split("=");
+                if (partes[0] === nombre) {
+                    return partes[1]; // Devuelve el valor de la cookie si se encuentra
+                }
+            }
+            return null;
+        }
+
+        // Función para crear o actualizar una cookie
+        function crearCookie(nombre, valor, dias) {
+            let fecha = new Date();
+            fecha.setTime(fecha.getTime() + (dias * 24 * 60 * 60 * 1000)); // 24 horas * 60 minutos * 60 segundos * 1000 milisegundos = 1 día, por lo que multiplicamos por el número de días deseados
+            let expires = "expires=" + fecha.toUTCString(); //toUTCString() convierte la fecha a formato UTC para que sea compatible con las cookies
+            document.cookie = nombre + "=" + valor + ";" + expires + ";path=/";
+        }
+        function borrarCookie(nombre) {
+            document.cookie = nombre + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            document.getElementById("caja").innerHTML = "Visita reseteada. Recarga la página";
+            //Opcionalmente, podríamos recargar la página automáticamente después de borrar la cookie
+            // location.reload();
+        }
+
+        // Lógica principal
+        let ultimaVisita = leerCookie("ultimaVisita");
+        let mensaje;
+        if (ultimaVisita === null) {
+            mensaje = "¡Bienvenid@ a mi página!.";
+        } else {
+            mensaje = "Tu última visita fue el: " + new Date(decodeURIComponent(ultimaVisita)).toLocaleString(); // Decodificamos la fecha y la convertimos a un formato legible para el usuario
+        }
+        crearCookie("ultimaVisita", encodeURIComponent(new Date().toString()), 30); // Guardamos la fecha actual como última visita, codificada para evitar problemas con caracteres especiales.
+        // Mostrar resultado
+        document.getElementById("caja").innerHTML = mensaje;
+    </script>
+</body>
+</html>

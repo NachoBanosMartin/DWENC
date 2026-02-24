@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Contador de visitas</h2>
+    <div id="contador"></div>
+    <script>
+        /*
+        14. Implementa un contador de visitas a una página web utilizando cookies, 
+        de manera que se muestre al usuario cuántas veces ha visitado esa página desde su navegador.
+            - Utiliza cookies para almacenar el número de veces que un usuario visita la página.
+            - Cada vez que se cargue la página:
+                ◦ Se comprueba si existe una cookie con el número de visitas.
+                ◦ Si existe, se incrementa el contador.
+                ◦ Si no existe, se crea la cookie con valor inicial 1.
+            - Se muestra en pantalla el número total de visitas a esa página.
+        */
+
+        // Función para obtener el valor (número) de una cookie por su nombre
+        function leerCookie(nombre) {
+            let cookies = document.cookie.split(";"); //primer split para separar por ;
+
+            for (let i = 0; i < cookies.length; i++) {
+                let partes = cookies[i].split("="); //separamos de nuevo por el = para quedarnos con "nombre"="valor"
+                if (partes[0] === nombre) { //comprobamos que el nombre es el que buscamos
+                    return partes[1];// Devuelve el valor de la cookie si se encuentra
+                }
+            }
+            return null; // Devuelve null si no se encuentra la cookie
+        }
+
+        // Función para crear o actualizar una cookie
+        function crearCookie(nombre, valor, dias) {
+            let fecha = new Date(); //fecha actual
+            fecha.setTime(fecha.getTime() + (dias * 24 * 60 * 60 * 1000)); // 24 horas * 60 minutos * 60 segundos * 1000 milisegundos
+            let expires = "expires=" + fecha.toUTCString();//toUTCString() convierte la fecha a formato UTC para que sea compatible con las cookies
+            document.cookie = nombre + "=" + valor + ";" + expires + ";path=/";
+        }
+
+        // Parte principal del programa
+        let contVisitas = leerCookie("visitas"); //Comprobamos si existe la cookie
+
+        if (contVisitas === null) { //si es null, no existe
+            contVisitas = 1;
+        } else {
+            contVisitas = parseInt(contVisitas) + 1; //incrementamos su valor (hay que parsear a int)
+        }
+
+        crearCookie("visitas", contVisitas, 30); //nombre de la cookie, contador, 30 días más de vida para la cookie
+
+        // Mostrar resultado en la página
+        document.getElementById("contador").innerHTML =
+            "Has visitado esta página <strong>" + contVisitas + "</strong> veces.";
+    </script>
+</body>
+</html>

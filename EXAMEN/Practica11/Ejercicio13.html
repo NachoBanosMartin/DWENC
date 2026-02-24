@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="imagen" src="conejo.jpg" width="300">
+    <button id="cambiar">Cambiar imagen</button>
+    <script>
+    /*
+    13. Crea un <img> en la página con cualquiera de las imágenes
+    y al pulsar un botón, reemplaza la imagen existente por otra imagen.
+    */
+        function cambiar(){
+            let imagen = document.getElementById("imagen");
+            imagen.setAttribute("src", "moto.jpg");
+            imagen.setAttribute("width", "300")
+        }
+        document.getElementById("cambiar").addEventListener("click", cambiar);
+    </script>
+</body>
+</html>

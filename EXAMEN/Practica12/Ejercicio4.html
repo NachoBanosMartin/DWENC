@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Cargar datos externos</h2>
+    <div id="resultado"></div>
+    <script>
+        /*
+        4. Carga el fichero usuario.json y muestra el nombre y la edad del usuario en la página.
+        */
+
+        fetch("usuario.json")
+            .then(respuesta => respuesta.json())
+            .then(usuario => {
+                document.getElementById("resultado").innerHTML = 
+                "Nombre: " + usuario.nombre + "<br>Edad: " + usuario.edad;
+        });
+    </script>
+</body>
+</html>
